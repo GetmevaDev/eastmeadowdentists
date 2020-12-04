@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Cosmetic & Implant Dentistry: Massapequa, NY.`,
+    image: '/image/share.png',
     author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,18 +14,39 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-pdf`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.DEPLOY_URL
+          ? 'https://cms-all-smiles-dental-spa.herokuapp.com'
+          : 'http://localhost:1337',
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`users`, `reasons`, `comments`, `commets-videos`, `why-choose-uses`, `services`, `our-doctors`],
+        singleTypes: [`home-page`, 'emergency-services', 'navigation-menu', 'contacts', 'photo-our-team', 'working-hours', 'about-us'],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-inline-svg`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `/images/` // See below to configure properly
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `All Smiles Dental Spa`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
