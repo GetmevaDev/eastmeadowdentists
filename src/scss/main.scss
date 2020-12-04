@@ -1605,6 +1605,20 @@ flex-wrap: wrap;
   color: #FFFFFF;
   -webkit-transform: rotate(-90deg) translateY(85px) translateX(32px);
   transform: rotate(-90deg) translateY(85px) translateX(32px);
+  @include mediaWidth_700{
+    bottom: 0;
+    right: 0;
+    padding: 0;
+  top: auto;
+    transform: none;
+    border-radius: 50% 0 0;
+    width: 50px;
+    height: 50px;
+    span{
+      display: none;
+    }
+  }
+
 &:hover{
   .call_icon{
     transform: rotate(45deg) translateZ(0);
