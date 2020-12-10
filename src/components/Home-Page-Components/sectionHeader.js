@@ -26,10 +26,9 @@ const SectionHeader = () => {
     <section
       className={"section-header"}
       style={{
-        background: `url(${data.strapiHomePage.Background_Header_Section.publicURL})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        zIndex: "-2",
+        background: window.matchMedia("(max-width: 480px)").matches
+          ? `url(${data.strapiHomePage.Background_Header_Section.publicURL})`
+          : "",
       }}
     >
       <div
@@ -75,6 +74,7 @@ const SectionHeader = () => {
         loop
         src={promoVideo}
         className="header-video"
+        poster={promoPoster}
       ></video>
     </section>
   )

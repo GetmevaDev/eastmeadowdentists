@@ -256,6 +256,10 @@ header .container .box {
   }
 
   @include mediaWidth_480 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+
     .links {
       margin-bottom: -1.8em;
     }
