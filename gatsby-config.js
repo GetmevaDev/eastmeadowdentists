@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     description: `Cosmetic & Implant Dentistry: Massapequa, NY.`,
-    image: '/image/share.png',
+    image: "/image/share.png",
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -19,11 +19,27 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.DEPLOY_URL
-          ? 'https://cms-all-smiles-dental-spa.herokuapp.com'
-          : 'http://localhost:1337',
+          ? "https://cms-all-smiles-dental-spa.herokuapp.com"
+          : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
-        contentTypes: [`users`, `reasons`, `comments`, `commets-videos`, `why-choose-uses`, `services`, `our-doctors`],
-        singleTypes: [`home-page`, 'emergency-services', 'navigation-menu', 'contacts', 'photo-our-team', 'working-hours', 'about-us'],
+        contentTypes: [
+          `users`,
+          `reasons`,
+          `comments`,
+          `commets-videos`,
+          `why-choose-uses`,
+          `services`,
+          `our-doctors`,
+        ],
+        singleTypes: [
+          `home-page`,
+          "emergency-services",
+          "navigation-menu",
+          "contacts",
+          "photo-our-team",
+          "working-hours",
+          "about-us",
+        ],
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,9 +49,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: `/images/` // See below to configure properly
-        }
-      }
+          include: `/images/`, // See below to configure properly
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
