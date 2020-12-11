@@ -149,6 +149,7 @@ header .container .box {
     text-transform: uppercase;
     text-decoration: none;
     color: #021744;
+    white-space: nowrap;
     &:hover::before {
       transform: scaleX(1) translateZ(0);
     }
@@ -1650,7 +1651,7 @@ header .container .box {
 
 .menu {
   background: #ffffff;
-  border-radius: 2px;
+  border-radius: 8px;
   position: absolute;
   top: 40px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
@@ -1659,6 +1660,8 @@ header .container .box {
   transform: translateY(-20px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
   z-index: 10;
+  display: flex;
+  margin-left: 6em;
 }
 
 .menu.active {
@@ -1675,14 +1678,20 @@ header .container .box {
 
 .menu li a {
   text-decoration: none;
-  color: #333333;
-  padding: 0.6em 1em;
+  color: #021744;
+  padding: 1.2em 1.6em;
   display: block;
   white-space: nowrap;
   text-transform: capitalize;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .menu li a:hover {
-  background-color: rgba(0, 0, 0, 0.184);
+  color: #214c9e;
+}
+
+.group-name {
+  padding: 1.2em 1.6em;
+  display: inline-block;
+  color: #74b1e0;
 }

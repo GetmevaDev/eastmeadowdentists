@@ -56,6 +56,8 @@ const Navbar = () => {
     setMenu(menuHandled)
   }, [data.allStrapiNavigationMenu.nodes[0].Header_Menu])
 
+  console.log(menu)
+
   return (
     <ul style={{ display: "flex" }} className={`menu-items`}>
       {menu.map(page => (

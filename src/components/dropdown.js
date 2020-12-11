@@ -18,21 +18,19 @@ const Dropdown = ({ items }) => {
         ref={dropdownRef}
         className={`menu ${isActive ? "active" : "inactive"}`}
       >
-        {items.children.map(group => (
-          <>
+        {items.children.map(({ group, children }) => (
+          <ul>
             {group.Display_Name ? (
               <span className="group-name">{group.Name_Page}</span>
             ) : null}
-            <ul>
-              {group.children.map(item => (
-                <li>
-                  <Link to={`${items.Link_Page}${item.Link_Page}`}>
-                    {item.Name_Page}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
+            {children.map(item => (
+              <li>
+                <Link to={`${items.Link_Page}${item.Link_Page}`}>
+                  {item.Name_Page}
+                </Link>
+              </li>
+            ))}
+          </ul>
         ))}
       </nav>
     </Link>
