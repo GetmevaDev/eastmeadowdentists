@@ -143,7 +143,7 @@ header .container .box {
     position: relative;
     padding: 5px 0;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 18px;
     letter-spacing: 0px;
     text-transform: uppercase;
@@ -241,7 +241,12 @@ header .container .box {
 
 .section-header {
   padding: 6em 0;
-  background-color: rgba(0, 0, 0, 0.34);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.184) 35.6%,
+    rgba(0, 0, 0, 0.38) 100%
+  );
   .row {
     @include mediaWidth_992 {
       flex-wrap: wrap;
@@ -1634,4 +1639,50 @@ header .container .box {
     height: 62%;
     min-height: 62%;
   }
+}
+
+.menu-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background: #ffffff;
+  border-radius: 2px;
+  position: absolute;
+  top: 40px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  z-index: 10;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333333;
+  padding: 0.6em 1em;
+  display: block;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+}
+
+.menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.184);
 }
