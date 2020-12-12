@@ -2,30 +2,24 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import SectionHeader from "../components/Home-Page-Components/sectionHeader"
-import SectionOffer from "../components/Home-Page-Components/sectionOffer"
-import SectionWelcome from "../components/Home-Page-Components/sectionWelcome"
-import SectionComments from "../components/Home-Page-Components/sectionComment"
-import SectionReason from "../components/Home-Page-Components/sectionReason"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
-import SectionServices from "../components/Home-Page-Components/sectionServices"
-import SectionTeam from "../components/RepeatComponents/sectionTeam"
 import SectionMap from "../components/RepeatComponents/sectionMap"
-import { graphql } from "gatsby"
 import "../scss/main.scss"
 import SectionHeaderTeam from "../components/Team/seactionHeaderTeam"
+import SectionAboutDoctor from "../components/Team/sectionAboutDoctor"
 
-const TeamPage = data => {
-  //const { doctor } = data
+const TeamPage = props => {
+  const { doctor } = props.pageContext
 
-  console.log(data)
   return (
     <Layout>
       <SEO
         title={"All Smiles Dental Spa"}
         description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
       />
-      <SectionHeaderTeam />
+      <SectionHeaderTeam doctor={doctor} />
+      <SectionAboutDoctor doctor={doctor} />
+
       <SectionAppointment />
       <SectionMap />
     </Layout>

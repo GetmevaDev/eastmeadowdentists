@@ -808,7 +808,6 @@ header .container .box {
 }
 
 .section-appointment {
-  margin-top: 50px;
   &::before {
     content: "";
     position: absolute;
@@ -1212,10 +1211,66 @@ header .container .box {
       width: auto;
     }
   }
+
+  .image-centered {
+    right: 20vw;
+
+    @include mediaWidth_992 {
+      right: 0;
+    }
+  }
+}
+
+.section-team-info {
+  padding: 60px 0 65px;
+  color: #021744;
+  font-weight: 600;
+
+  p {
+    color: #838fae;
+    line-height: 175.9%;
+  }
+
+  .w1200 {
+    max-width: 1200px;
+  }
+  .guglielmi-info {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      margin-right: 2em;
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      white-space: nowrap;
+      padding-left: 1em;
+      text-indent: -1em;
+      font-size: 0.9rem;
+    }
+
+    li:before {
+      content: "»";
+      padding-right: 5px;
+      transform: scale(0.5);
+    }
+
+    @include mediaWidth_700 {
+      flex-direction: column;
+      iframe {
+        margin-top: 2em;
+      }
+    }
+  }
 }
 
 .section-welcome-about-us {
-  padding: 60px 0 65px;
+  padding: 0 0 65px;
   text-align: center;
 
   .w1200 {

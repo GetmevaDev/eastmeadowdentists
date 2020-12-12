@@ -14,7 +14,11 @@ exports.createPages = async function ({ actions, graphql }) {
             Slug
             Photo_Team {
               id
-              absolutePath
+              childImageSharp {
+                fixed(width: 1000) {
+                  src
+                }
+              }
             }
           }
         }
