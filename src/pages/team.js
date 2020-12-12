@@ -17,8 +17,12 @@ const TeamPage = props => {
         title={"All Smiles Dental Spa"}
         description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
       />
-      <SectionHeaderTeam doctor={doctor} />
-      <SectionAboutDoctor doctor={doctor} />
+      {doctor && (
+        <>
+          <SectionHeaderTeam doctor={doctor} />
+          <SectionAboutDoctor doctor={doctor} />
+        </>
+      )}
 
       <SectionAppointment />
       <SectionMap />

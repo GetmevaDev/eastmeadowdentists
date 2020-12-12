@@ -2,7 +2,6 @@ import React from "react"
 import LinkAppointment from "../appointmentLink"
 
 const SectionHeaderTeam = ({ doctor }) => {
-  console.log(doctor)
   return (
     <section className={`section-header-about-us`}>
       <div className="container w1200">
