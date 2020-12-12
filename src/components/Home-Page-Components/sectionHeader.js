@@ -5,6 +5,7 @@ import promoVideo from "../../images/promo-banner.mp4"
 import promoPoster from "../../images/promo-banner.png"
 
 import LinkAppointment from "../appointmentLink"
+import { windowMatches } from "../../lib/helpers"
 
 const SectionHeader = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,7 @@ const SectionHeader = () => {
     <section
       className={"section-header"}
       style={{
-        background: window.matchMedia("(max-width: 480px)").matches
+        background: windowMatches("max-width: 480px")
           ? `url(${data.strapiHomePage.Background_Header_Section.publicURL})`
           : "",
       }}
