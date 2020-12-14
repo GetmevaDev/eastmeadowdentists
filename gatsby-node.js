@@ -8,13 +8,7 @@ exports.createPages = async function ({ actions, graphql }) {
       allStrapiOurDoctors {
         edges {
           node {
-            Specialization
-            Name
-            About_Doctor_Team
             Slug
-            Photo_Team {
-              publicURL
-            }
           }
         }
       }
@@ -26,7 +20,7 @@ exports.createPages = async function ({ actions, graphql }) {
       path: `/team/${node.Slug}`,
       component: path.resolve(`./src/pages/team.js`),
       context: {
-        doctor: node,
+        slug: node.Slug,
       },
     })
   })
