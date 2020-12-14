@@ -4,13 +4,12 @@ const SectionAboutDoctor = ({ doctor }) => {
   return (
     <section className={`section-team-info`}>
       <div className="container w1200">
-        {" "}
         <div
           key={`body`}
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: doctor.About_Doctor_Team }}
         />
-        {doctor.Name == "Dr. Marcello Guglielmi" ? (
+        {doctor.Slug == "dr-marcello-guglielmi" ? (
           <div className="guglielmi-info">
             <ul>
               <li>Sedation</li>
