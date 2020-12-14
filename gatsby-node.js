@@ -12,7 +12,7 @@ exports.createPages = async function ({ actions, graphql }) {
             Name
             About_Doctor_Team
             Slug
-            Photo_Team {
+            Photo {
               id
               childImageSharp {
                 fixed(width: 1000) {
