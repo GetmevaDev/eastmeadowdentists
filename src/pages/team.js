@@ -20,7 +20,11 @@ const TeamPage = props => {
               About_Doctor_Team
               Name
               Photo_Team {
-                publicURL
+                childImageSharp {
+                  fixed(width: 1000) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
               }
               Specialization
               Slug

@@ -1,5 +1,6 @@
 import React from "react"
 import LinkAppointment from "../appointmentLink"
+import Img from "gatsby-image"
 
 const SectionHeaderTeam = ({ doctor }) => {
   return (
@@ -30,7 +31,7 @@ const SectionHeaderTeam = ({ doctor }) => {
         />
       </div>
       <div className="image-box image-centered">
-        <img src={doctor.Photo_Team.publicURL} alt={doctor.Name} />
+        <Img fixed={doctor.Photo_Team.childImageSharp.fixed} />
       </div>
     </section>
   )
