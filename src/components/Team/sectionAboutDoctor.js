@@ -4,7 +4,6 @@ const SectionAboutDoctor = ({ doctor }) => {
   return (
     <section className={`section-team-info`}>
       <div className="container w1200">
-        {" "}
         <div
           key={`body`}
           id="___gatsby"

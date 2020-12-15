@@ -29,7 +29,11 @@ const SectionOffer = () => {
             <div className={`card_reason`}>
               <img src={item.node.Card_Image.publicURL} alt="" />
               <h4>{item.node.Title}</h4>
-              <p>{item.node.Content}</p>
+              <div
+                key={item.node.id}
+                id="___gatsby"
+                dangerouslySetInnerHTML={{ __html: item.node.Content }}
+              />
               <LinkAppointment
                 className={`hover`}
                 text={"Book Appointment"}
