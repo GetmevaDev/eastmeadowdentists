@@ -20,7 +20,7 @@ function TestimonialsPage() {
       />
       <SectionComments showHeader={false} />
       <SectionReviewForm />
-      <SectionAppointment />
+      <SectionAppointment noMarginTop={true} />
       <SectionMap />
     </Layout>
   )

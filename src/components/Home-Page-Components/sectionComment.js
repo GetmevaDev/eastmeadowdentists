@@ -1,22 +1,26 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+import SwiperCore, { Navigation, Pagination, Scrollbar, Autoplay } from "swiper"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
 
 import "swiper/swiper.scss"
-
+import "swiper/components/navigation/navigation.scss"
+import "swiper/components/pagination/pagination.scss"
+import "swiper/components/scrollbar/scrollbar.scss"
+import "swiper/components/effect-fade/effect-fade.scss"
 import Star from "../../images/star.svg"
 import Arrow from "../../images/arrow.svg"
 import ArrowActive from "../../images/arrow-active.svg"
+import Avatar from "../../images/avatar.png"
 
-const SectionComments = ({ showHeader }) => {
+const SectionComments = ({ showHeader = true }) => {
   const data = useStaticQuery(graphql`
     {
-      allStrapiComments(limit: 3) {
+      allStrapiComments {
         edges {
           node {
             Photo {
@@ -26,6 +30,7 @@ const SectionComments = ({ showHeader }) => {
                 }
               }
             }
+            Shown
             Name
             Rating
             Comment
@@ -52,9 +57,9 @@ const SectionComments = ({ showHeader }) => {
       }
     }
   `)
-  SwiperCore.use([Navigation])
+  SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay])
   return (
-    <section className={`section-comments`}>
+    <section className={`section-comments ${showHeader ? "show-header" : ""}`}>
       {showHeader && (
         <>
           <h2 className="title-section">What people say</h2>
@@ -66,95 +71,69 @@ const SectionComments = ({ showHeader }) => {
         </>
       )}
       <div className="container">
-        <div className="box-comment row">
-          {data.allStrapiComments.edges.map(item => {
-            return (
-              <div className={`block-comment fb dn`}>
-                {item.node.Photo && (
-                  <img
-                    src={item.node.Photo.childImageSharp.fixed.src}
-                    className={`portrait`}
-                    alt={""}
-                  />
-                )}
-                <h5 className={`name`}>{item.node.Name}</h5>
-                <div className="rating">
-                  {Array.from(Array(item.node.Rating), (item, i) => {
-                    return (
-                      <span key={i}>
-                        <img src={Star} alt="star" />
-                      </span>
-                    )
-                  })}
-                </div>
-
-                <p className={`comment`}>{item.node.Comment}</p>
-                {item.node.the_comment_came_from && (
-                  <img
-                    className={`google`}
-                    src={item.node.the_comment_came_from.publicURL}
-                    alt=""
-                  />
-                )}
-              </div>
-            )
-          })}
-        </div>
         <Swiper
           className={`box-comment`}
-          spaceBetween={30}
           slidesPerView={1}
-          navigation={{
-            nextEl: ".swiper-button-prev",
-            prevEl: ".swiper-button-next",
-          }}
+          watchSlidesVisibility={true}
+          watchSlidesProgress={true}
+          // navigation={{
+          //   nextEl: ".swiper-button-prev",
+          //   prevEl: ".swiper-button-next",
+          // }}
           breakpoints={{
             // when window width is >= 640px
-            667: {
+            992: {
+              slidesPerView: 3,
+            },
+            480: {
               slidesPerView: 2,
             },
           }}
         >
           {data.allStrapiComments.edges.map(item => {
-            return (
-              <SwiperSlide className={`block-comment db`}>
-                {item.node.Photo && (
-                  <img
-                    src={item.node.Photo.childImageSharp.fixed.src}
-                    className={`portrait`}
-                    alt={""}
-                  />
-                )}
-                <h5 className={`name`}>{item.node.Name}</h5>
-                <div className="rating">
-                  {Array.from(Array(item.node.Rating), (item, i) => {
-                    return (
-                      <span key={i}>
-                        <img src={Star} alt="star" />
-                      </span>
-                    )
-                  })}
-                </div>
+            if (item.node.Shown) {
+              return (
+                <SwiperSlide className={`block-comment fb dn`}>
+                  {item.node.Photo ? (
+                    <img
+                      src={item.node.Photo.childImageSharp.fixed.src}
+                      className={`portrait`}
+                      alt={""}
+                    />
+                  ) : (
+                    <img src={Avatar} className={`portrait`} alt={""} />
+                  )}
+                  <h5 className={`name`}>{item.node.Name}</h5>
+                  <div className="rating">
+                    {Array.from(Array(item.node.Rating), (item, i) => {
+                      return (
+                        <span key={i}>
+                          <img src={Star} alt="star" />
+                        </span>
+                      )
+                    })}
+                  </div>
 
-                <p className={`comment`}>{item.node.Comment}</p>
-                {item.node.the_comment_came_from && (
-                  <img
-                    className={`google`}
-                    src={item.node.the_comment_came_from.publicURL}
-                    alt=""
-                  />
-                )}
-              </SwiperSlide>
-            )
+                  <p className={`comment`}>{item.node.Comment}</p>
+                  {item.node.the_comment_came_from && (
+                    <img
+                      className={`google`}
+                      src={item.node.the_comment_came_from.publicURL}
+                      alt=""
+                    />
+                  )}
+                </SwiperSlide>
+              )
+            } else return null
           })}
-          <button className="swiper-button-next">
+          {/* <button className="swiper-button-next">
             <img src={Arrow} alt="" />
             <img src={ArrowActive} alt="" />
           </button>
           <button className="swiper-button-prev">
             <img src={Arrow} alt="" />
             <img src={ArrowActive} className={`rotate`} alt="" />
-          </button>
+          </button> */}
         </Swiper>
 
         <div className={`box-comment_video row`}>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import LinkAppointment from "../appointmentLink"
 
-const SectionAppointment = () => {
+const SectionAppointment = ({ noMarginTop = false }) => {
   const data = useStaticQuery(graphql`
     {
       strapiHomePage {
@@ -19,7 +19,7 @@ const SectionAppointment = () => {
   `)
 
   return (
-    <section className={`section-appointment`}>
+    <section className={`section-appointment ${noMarginTop ? 'noMarginTop' : ''}`}>
       <div className="container row">
         <div className={`img-section`}>
           <img
