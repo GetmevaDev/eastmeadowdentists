@@ -1386,6 +1386,9 @@ header .container .box {
       color: #021744;
     }
   }
+  .reviews_text {
+    margin-bottom: 2em;
+  }
 }
 
 .section-our-doctors {
@@ -1857,5 +1860,91 @@ header .container .box {
     letter-spacing: 0.5px;
     color: #021744;
     text-align: center;
+  }
+}
+
+.section-contact-info {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    min-height: 50vh;
+
+    @include mediaWidth_992 {
+      width: 95%;
+    }
+
+    @include mediaWidth_700 {
+      flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-img {
+      display: flex;
+      flex-basis: 50%;
+      justify-content: center;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      line-height: 2rem;
+      .details {
+        li {
+          display: flex;
+          font-weight: 700;
+          font-size: 14px;
+
+          & a {
+            color: black;
+            margin-left: 1em;
+            align-items: flex-start;
+          }
+        }
+      }
+      .box-working-hours {
+        margin-top: 2em;
+        h5 {
+          font-weight: 800;
+        }
+        li {
+          display: flex;
+          justify-content: space-between;
+          width: 80%;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 40px;
+          letter-spacing: 0px;
+          span:last-child {
+            flex-basis: 60%;
+          }
+          &:last-child {
+            strong {
+              margin-left: auto;
+              flex-basis: 60%;
+            }
+          }
+        }
+      }
+      @include mediaWidth_700 {
+        order: 2;
+        flex-basis: 100%;
+        margin-top: 1.5em;
+      }
+    }
+
+    .contact-img {
+      display: flex;
+      align-items: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @include mediaWidth_700 {
+        order: 1;
+        flex-basis: 100%;
+      }
+    }
   }
 }

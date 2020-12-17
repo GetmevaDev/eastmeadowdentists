@@ -1,6 +1,6 @@
 import React from "react"
 import SectionPromotions from "../components/About-Us/sectionPromotions"
-import SectionHeader from "../components/common/sectionHeader"
+import SectionHeader from "../components/RepeatComponents/sectionHeader"
 import Layout from "../components/layout"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
 import SectionMap from "../components/RepeatComponents/sectionMap"
