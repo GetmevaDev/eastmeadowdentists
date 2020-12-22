@@ -30,6 +30,7 @@ module.exports = {
           `why-choose-uses`,
           `services`,
           `our-doctors`,
+          `faqs`,
         ],
         singleTypes: [
           `home-page`,

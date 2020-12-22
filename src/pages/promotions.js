@@ -13,11 +13,7 @@ function PromotionsPage() {
         title={"All Smiles Dental Spa"}
         description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
       />
-      <SectionHeader
-        headerPrimary="Promotions"
-        headerSecondary="This site does everything you could possibly want it to do and not only that, beautifully carefully
-        designed and extremely intuitive to use."
-      />
+      <SectionHeader headerPrimary="Promotions" />
       <SectionPromotions />
       <SectionAppointment />
       <SectionMap />
