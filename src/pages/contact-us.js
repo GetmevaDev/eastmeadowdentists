@@ -4,7 +4,6 @@ import SectionHeader from "../components/RepeatComponents/sectionHeader"
 import SEO from "../components/seo"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
 import SectionMap from "../components/RepeatComponents/sectionMap"
-import ContactUs from "../components/contactUs"
 import SectionContactInfo from "../components/Contact-Us/sectionContactInfo"
 import { graphql, useStaticQuery } from "gatsby"
 

@@ -1948,3 +1948,145 @@ header .container .box {
     }
   }
 }
+
+.tabs-wrapper {
+  align-items: center;
+}
+
+.RRT__panel {
+  margin-top: 1em !important;
+  border: 0 !important;
+  border-top: 1px solid #dadde7 !important;
+
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h4 {
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  h6 {
+    display: block;
+    font-size: 0.67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+  ul ul,
+  ol ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
+  }
+  ol ol,
+  ul ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+  }
+}
+
+.tab {
+  background-color: white !important;
+  border: 0 !important;
+  white-space: initial !important;
+  font-size: 0.7rem;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.2em;
+  text-align: center;
+  display: inline-table;
+
+  a {
+    color: #000000;
+  }
+
+  &[aria-selected="true"] {
+    background: #214c9e !important;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+.section-service-doctors {
+  background: linear-gradient(135deg, #74b1e0 0%, #609ccb 100%);
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  @include mediaWidth_992 {
+    margin-top: 80px;
+  }
+  @include mediaWidth_480 {
+    padding: 20px 0;
+  }
+  .w1200 {
+    max-width: 1200px;
+  }
+  h3 {
+    margin-top: 0.5em;
+    position: relative;
+    z-index: 5;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 28px;
+    letter-spacing: 0.22px;
+    color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}

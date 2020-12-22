@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
 import SectionMap from "../components/RepeatComponents/sectionMap"
-import "../scss/main.scss"
 import SectionHeaderTeam from "../components/Team/seactionHeaderTeam"
 import SectionAboutDoctor from "../components/Team/sectionAboutDoctor"
 
