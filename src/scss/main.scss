@@ -2321,3 +2321,137 @@ header .container .box {
     padding-bottom: 15px;
   }
 }
+
+.Card {
+  display: grid;
+  grid-gap: 70px;
+  grid-template-columns: repeat(3, 2fr);
+  margin: 34px 70px;
+  max-width: 1470px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content h3 {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #021744;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #323b4b;
+}
+
+.card-content button {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #214c9e;
+}
+
+.pagination {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 15px;
+}
+
+.pagination a {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 19px;
+  color: #214c9e;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination p {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 17px;
+  padding: 8px 16px;
+  color: #021744;
+}
+
+@media (max-width: 600px) {
+  .Card {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-device-width: 650px) and (max-device-width: 800px) {
+  .Card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1666px) {
+  .Card {
+    margin: auto;
+    margin-top: 60px;
+  }
+}
+
+.blog-page {
+  display: flex;
+  justify-content: center;
+  margin: 70px 40px 70px 150px;
+}
+
+.card-page-content {
+  flex: 2;
+  margin-right: 30px;
+}
+
+.card-page-card {
+  flex: 1;
+}
+
+.card-page-content h3 {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 37px;
+  color: #021744;
+}
+
+.card-page-content p {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #323b4b;
+}
+
+.card-page-content h6 {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #214c9e;
+}

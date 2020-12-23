@@ -31,6 +31,7 @@ module.exports = {
           `services`,
           `our-doctors`,
           `faqs`,
+          `posts`,
         ],
         singleTypes: [
           `home-page`,

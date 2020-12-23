@@ -59,8 +59,6 @@ class AccordionItem extends React.Component {
       state: { opened },
     } = this
 
-    console.log(node)
-
     return (
       <div
         {...{

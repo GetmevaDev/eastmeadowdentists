@@ -41,7 +41,50 @@ exports.createPages = async function ({ actions, graphql }) {
       }
     }
   `)
+  const blog = await graphql(`
+    query {
+      allStrapiPosts(sort: { fields: createdAt, order: DESC }, limit: 1000) {
+        edges {
+          node {
+            Body
+            Slug
+            Title
+          }
+        }
+      }
+    }
+  `)
 
+  // Create blog-list pages
+  const posts = blog.data.allStrapiPosts.edges
+  const postsPerPage = 6
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      component: path.resolve("./src/pages/blog.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  //Create pages for each blogpost
+
+  posts.forEach(({ node }) => {
+    createPage({
+      path: `/${node.Published_Date}/${node.Slug}`,
+      component: path.resolve("./src/pages/post.js"),
+      context: {
+        post: node,
+      },
+    })
+  })
+
+  //Create service pages
   services.data.allStrapiServices.edges.forEach(({ node }, idx, array) => {
     createPage({
       path: `/services${node.Link_services}`,
@@ -53,6 +96,7 @@ exports.createPages = async function ({ actions, graphql }) {
     })
   })
 
+  //Create doctor pages
   team.data.allStrapiOurDoctors.edges.forEach(({ node }) => {
     createPage({
       path: `/team/${node.Slug}`,
