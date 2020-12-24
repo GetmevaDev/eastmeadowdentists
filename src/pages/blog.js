@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import SectionCard from "../components/Blog/SectionCard"
 
 const BlogPage = props => {
-  console.log(props)
   return (
     <Layout>
       <SEO
@@ -15,8 +14,7 @@ const BlogPage = props => {
         description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
       ></SEO>
       <SectionHeader headerPrimary="Recent Posts" headerSecondary="Blog" />
-      <SectionCard />
-      {/* <SectionBlogPage /> */}
+      <SectionCard {...props} />
       <SectionMap />
     </Layout>
   )

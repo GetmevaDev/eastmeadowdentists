@@ -49,6 +49,7 @@ exports.createPages = async function ({ actions, graphql }) {
             Body
             Slug
             Title
+            Published_Date
           }
         }
       }
@@ -68,6 +69,7 @@ exports.createPages = async function ({ actions, graphql }) {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        posts: posts.slice(i * postsPerPage, i * postsPerPage + 6),
       },
     })
   })

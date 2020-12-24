@@ -2343,16 +2343,17 @@ header .container .box {
   font-size: 20px;
   line-height: 24px;
   color: #021744;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.card-content p {
+.card-content-p {
   font-family: Proxima Nova;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   color: #323b4b;
+  margin-bottom: 20px;
 }
 
 .card-content button {
@@ -2362,6 +2363,10 @@ header .container .box {
   font-size: 14px;
   line-height: 17px;
   color: #214c9e;
+}
+
+.card-content a {
+  color: #021744;
 }
 
 .pagination {
@@ -2415,18 +2420,32 @@ header .container .box {
 }
 
 .blog-page {
-  display: flex;
+  display: grid;
   justify-content: center;
-  margin: 70px 40px 70px 150px;
+  margin: 20px 0;
+}
+
+.card-page-content-full {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-left: 100px;
+  margin-bottom: 2em;
+
+  .back-link {
+    cursor: pointer;
+  }
 }
 
 .card-page-content {
-  flex: 2;
-  margin-right: 30px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin-right: 100px;
 }
 
 .card-page-card {
-  flex: 1;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  max-width: 400px;
 }
 
 .card-page-content h3 {
@@ -2436,6 +2455,7 @@ header .container .box {
   font-size: 30px;
   line-height: 37px;
   color: #021744;
+  margin-bottom: 14px;
 }
 
 .card-page-content p {
@@ -2454,4 +2474,44 @@ header .container .box {
   font-size: 14px;
   line-height: 17px;
   color: #214c9e;
+  margin-bottom: 8px;
+}
+
+.btn-blog p {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #214c9e;
+  padding-top: 10px;
+  margin-bottom: 45px;
+}
+
+@media (min-width: 768px) {
+  .card-page-content {
+    margin-left: 100px;
+  }
+  .card-page-card {
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 765px) {
+  .blog-page {
+    display: grid;
+    grid-template-areas:
+      "name"
+      "avatar"
+      "bio";
+    margin-left: 20px;
+  }
+  .card-page-content {
+    grid-area: name;
+    margin-bottom: 30px;
+  }
+
+  .card-page-card {
+    grid-area: avatar;
+  }
 }
