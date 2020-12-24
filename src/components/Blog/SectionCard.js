@@ -5,6 +5,8 @@ import SectionBlogCard from "./SectionBlogCard"
 const SectionCard = props => {
   const { currentPage, numPages, posts } = props.pageContext
 
+  console.log(props.pageContext)
+
   const generatePagination = () => {
     let pagination = []
     for (let idx = 1; idx <= numPages; idx++) {

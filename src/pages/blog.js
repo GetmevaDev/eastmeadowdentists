@@ -6,7 +6,7 @@ import SectionMap from "../components/RepeatComponents/sectionMap"
 import SEO from "../components/seo"
 import SectionCard from "../components/Blog/SectionCard"
 
-const BlogPage = props => {
+const Blog = props => {
   return (
     <Layout>
       <SEO
@@ -20,4 +20,4 @@ const BlogPage = props => {
   )
 }
 
-export default BlogPage
+export default Blog
