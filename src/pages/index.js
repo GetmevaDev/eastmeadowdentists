@@ -13,20 +13,33 @@ import SectionTeam from "../components/RepeatComponents/sectionTeam"
 import SectionMap from "../components/RepeatComponents/sectionMap"
 
 import "../scss/main.scss"
+import { graphql, useStaticQuery } from "gatsby"
 
-const IndexPage = () => (
-  <Layout>
-      <SEO title={'All Smiles Dental Spa'} description={'Cosmetic & Implant Dentistry: Massapequa, NY.'} />
-    <SectionHeader />
-    <SectionOffer />
-    <SectionWelcome />
-    <SectionComments />
-    <SectionReason/>
-    <SectionAppointment />
-    <SectionServices />
-    <SectionTeam />
-    <SectionMap />
-  </Layout>
-)
+const IndexPage = () => {
+  const seo = useStaticQuery(graphql`
+    {
+      strapiHomePage {
+        SEO {
+          Description
+          Title
+        }
+      }
+    }
+  `)
 
+  return (
+    <Layout>
+      <SEO seo={seo.strapiHomePage.SEO} />
+      <SectionHeader />
+      <SectionOffer />
+      <SectionWelcome />
+      <SectionComments />
+      <SectionReason />
+      <SectionAppointment />
+      <SectionServices />
+      <SectionTeam />
+      <SectionMap />
+    </Layout>
+  )
+}
 export default IndexPage

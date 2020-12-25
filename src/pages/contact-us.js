@@ -6,6 +6,7 @@ import SectionAppointment from "../components/RepeatComponents/sectionAppointmen
 import SectionMap from "../components/RepeatComponents/sectionMap"
 import SectionContactInfo from "../components/Contact-Us/sectionContactInfo"
 import { graphql, useStaticQuery } from "gatsby"
+import seo from "../components/seo"
 
 function ContactUsPage() {
   const data = useStaticQuery(graphql`
@@ -20,16 +21,17 @@ function ContactUsPage() {
         }
         Title
         Subtitle
+        SEO {
+          Title
+          Description
+        }
       }
     }
   `)
 
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      ></SEO>
+      <SEO seo={data.strapiContacts.SEO} />
 
       <SectionHeader
         headerPrimary={data.strapiContacts.Title}

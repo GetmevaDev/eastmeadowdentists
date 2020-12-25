@@ -10,14 +10,22 @@ import SectionGallery from "../components/About-Us/sectionGallery"
 
 import "../scss/main.scss"
 import SEO from "../components/seo"
+import { graphql, useStaticQuery } from "gatsby"
 
 const AboutUs = () => {
+  const seo = useStaticQuery(graphql`
+    {
+      strapiAboutUs {
+        SEO {
+          Title
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      />
+      <SEO seo={seo.strapiAboutUs.SEO[0]} />
       <SectionHeaderAboutUs />
       <SectionWelcomeAboutUs />
       <SectionDoctors />

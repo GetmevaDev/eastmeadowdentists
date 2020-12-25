@@ -10,9 +10,10 @@ const Blog = props => {
   return (
     <Layout>
       <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      ></SEO>
+        seo={{
+          Title: "Blog » All Smiles Dental Spa",
+        }}
+      />
       <SectionHeader headerPrimary="Recent Posts" headerSecondary="Blog" />
       <SectionCard {...props} />
       <SectionMap />

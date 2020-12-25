@@ -11,10 +11,7 @@ const PostPage = props => {
     <Layout>
       {post && (
         <>
-          <SEO
-            title={"All Smiles Dental Spa"}
-            description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-          ></SEO>
+          {post.SEO && <SEO seo={post.SEO} />}
           <SectionHeader headerPrimary={post.Title} headerSecondary="Blog" />
           <SectionBlogPage post={post} />
           <SectionMap />

@@ -8,13 +8,22 @@ import SectionQuestionTwo from "../components/EmergencyServices/sectionQuestionT
 import SectionQuestionThree from "../components/EmergencyServices/sectionQuestionThree"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
 import SEO from "../components/seo"
+import { graphql, useStaticQuery } from "gatsby"
 
-
-const EmergencyServices = () =>{
-
-  return(
+const EmergencyServices = () => {
+  const seo = useStaticQuery(graphql`
+    {
+      strapiEmergencyServices {
+        SEO {
+          Description
+          Title
+        }
+      }
+    }
+  `)
+  return (
     <Layout>
-      <SEO title={'All Smiles Dental Spa'} description={'Cosmetic & Implant Dentistry: Massapequa, NY.'} />
+      <SEO seo={seo.strapiEmergencyServices.SEO} />
       <SectionHeaderEmergencyServices />
       <SectionEmergencyDentistry />
       <SectionQuestionOne />
@@ -25,6 +34,5 @@ const EmergencyServices = () =>{
     </Layout>
   )
 }
-
 
 export default EmergencyServices

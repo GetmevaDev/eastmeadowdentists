@@ -15,16 +15,16 @@ function InsurancePage() {
         Subtitle
         Content_Subtitle
         Content_Title
+        SEO {
+          Title
+        }
       }
     }
   `)
 
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      />
+      <SEO seo={data.strapiInsurance.SEO} />
       <SectionHeader
         headerPrimary={data.strapiInsurance.Title}
         headerSecondary={data.strapiInsurance.Subtitle}

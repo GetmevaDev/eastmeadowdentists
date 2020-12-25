@@ -12,6 +12,13 @@ exports.createPages = async function ({ actions, graphql }) {
             Name
             About_Doctor_Team
             Slug
+            SEO {
+              Description
+              Image_Height
+              Image_Url
+              Image_Width
+              Title
+            }
             Photo_Team {
               id
               childImageSharp {
@@ -36,6 +43,13 @@ exports.createPages = async function ({ actions, graphql }) {
             Image_services {
               publicURL
             }
+            SEO {
+              Description
+              Image_Height
+              Image_Url
+              Image_Width
+              Title
+            }
           }
         }
       }
@@ -50,6 +64,10 @@ exports.createPages = async function ({ actions, graphql }) {
             Slug
             Title
             Published_Date
+            SEO {
+              Description
+              Title
+            }
           }
         }
       }

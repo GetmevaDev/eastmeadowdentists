@@ -12,12 +12,9 @@ function ServicesPage(props) {
 
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      ></SEO>
       {services && (
         <>
+          {service.SEO && <SEO seo={service.SEO} />}
           <SectionHeader
             headerPrimary={service.Name_services}
             headerSecondary="Our Services"

@@ -14,15 +14,15 @@ function TestimonialsPage() {
       strapiTestimonials {
         Subtitle
         Title
+        SEO {
+          Title
+        }
       }
     }
   `)
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      />
+      <SEO seo={data.strapiTestimonials.SEO} />
       <SectionHeader
         headerPrimary={data.strapiTestimonials.Title}
         headerSecondary={data.strapiTestimonials.Subtitle}

@@ -38,6 +38,7 @@ module.exports = {
           "emergency-services",
           "navigation-menu",
           "contacts",
+          "common-meta-data",
           "photo-our-team",
           "working-hours",
           "about-us",

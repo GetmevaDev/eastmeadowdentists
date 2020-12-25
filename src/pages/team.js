@@ -10,14 +10,13 @@ import SectionAboutDoctor from "../components/Team/sectionAboutDoctor"
 const TeamPage = props => {
   const { doctor } = props.pageContext
 
+  console.log(doctor)
+
   return (
     <Layout>
-      <SEO
-        title={"All Smiles Dental Spa"}
-        description={"Cosmetic & Implant Dentistry: Massapequa, NY."}
-      />
       {doctor && (
         <>
+          {doctor.SEO && <SEO seo={doctor.SEO} />}
           <SectionHeaderTeam doctor={doctor} />
           <SectionAboutDoctor doctor={doctor} />
         </>
