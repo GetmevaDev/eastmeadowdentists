@@ -94,7 +94,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
   //Create pages for each blogpost
 
-  posts.forEach(({ node }) => {
+  posts.forEach(({ node }, idx) => {
     createPage({
       path: `/${node.Published_Date}/${node.Slug}`,
       component: path.resolve("./src/pages/post.js"),

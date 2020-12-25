@@ -15,6 +15,7 @@ function InsurancePage() {
         Subtitle
         Content_Subtitle
         Content_Title
+        Text_After_List
         SEO {
           Title
         }

@@ -23,7 +23,7 @@ const SectionBlogPage = props => {
   return (
     <section className="blog-page">
       <div className="card-page-content-full">
-        <div className="back-link" onClick={() => navigate(-1)}>
+        <div className="back-link" onClick={() => navigate(`/blog`)}>
           &larr; Back to articles
         </div>
       </div>

@@ -26,6 +26,9 @@ const SectionInsurances = ({ insurancePage }) => {
           )
         })}
       </div>
+      <p className={`reviews_text`} style={{ marginTop: "3em" }}>
+        {insurancePage.Text_After_List}
+      </p>
     </section>
   )
 }
