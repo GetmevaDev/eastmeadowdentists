@@ -2,9 +2,11 @@ import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Dropdown from "./dropdown"
+import NavbarExpand from "./navbarExpand"
 
 const Navbar = () => {
   const [menu, setMenu] = useState([])
+  const [currentOpened, setCurrentOpened] = useState("")
   const data = useStaticQuery(graphql`
     {
       allStrapiNavigationMenu {
@@ -36,7 +38,7 @@ const Navbar = () => {
         )
         let menuLinkGroupsWithChildren = menuLinkGroups.map(group => {
           let groupItems = menuUnhandled.filter(
-            item => item.Link_Group == group.Link_Page
+            item => item.Link_Group === group.Link_Page
           )
 
           return {
@@ -56,6 +58,8 @@ const Navbar = () => {
     setMenu(menuHandled)
   }, [data.allStrapiNavigationMenu.nodes[0].Header_Menu])
 
+  console.log(menu)
+
   return (
     <ul style={{ display: "flex" }} className={`menu-items`}>
       {menu.map(page => (
@@ -69,7 +73,14 @@ const Navbar = () => {
               {page.Name_Page}
             </Link>
           ) : (
-            <Dropdown items={page} />
+            <>
+              <NavbarExpand
+                items={page}
+                setCurrentOpened={setCurrentOpened}
+                currentOpened={currentOpened}
+              />
+              <Dropdown items={page} />
+            </>
           )}
         </li>
       ))}

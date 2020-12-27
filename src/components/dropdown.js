@@ -9,7 +9,7 @@ const Dropdown = ({ items }) => {
   return (
     <Link
       to="#"
-      className="menu-container link-menu "
+      className="menu-container link-menu"
       onMouseEnter={onClick}
       onMouseLeave={onClick}
     >
