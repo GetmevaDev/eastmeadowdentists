@@ -62,13 +62,13 @@ const SectionHeader = () => {
                   "color 0.3s, background 0.3s, -webkit-box-shadow 0.3s",
               }}
             />
-            {/*<Link to={`https://meva.app/practices/all-smiles-dental-spa/appointment`}>Online check-in</Link>*/}
           </div>
         </div>
       </div>
       <video
         autoPlay
         muted
+        playsInline
         loop
         src={promoVideo}
         className="header-video"
