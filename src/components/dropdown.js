@@ -4,14 +4,15 @@ import React, { useRef, useState } from "react"
 const Dropdown = ({ items }) => {
   const dropdownRef = useRef(null)
   const [isActive, setIsActive] = useState(false)
-  const onClick = () => setIsActive(!isActive)
+  const onMouseEnter = () => setIsActive(true)
+  const onMouseLeave = () => setIsActive(false)
 
   return (
     <Link
-      to="#"
+      to={`${items.Link_Page}`}
       className="menu-container link-menu"
-      onMouseEnter={onClick}
-      onMouseLeave={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <span>{items.Name_Page}</span>
       <nav

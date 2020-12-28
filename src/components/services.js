@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
-import SectionHeader from "../components/RepeatComponents/sectionHeader"
-import SEO from "../components/seo"
-import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
-import SectionMap from "../components/RepeatComponents/sectionMap"
-import SectionServiceInfo from "../components/Services/sectionServiceInfo"
-import SectionServiceDoctors from "../components/Services/sectionServiceDoctors"
+import Layout from "./layout"
+import SectionHeader from "./RepeatComponents/sectionHeader"
+import SEO from "./seo"
+import SectionAppointment from "./RepeatComponents/sectionAppointment"
+import SectionMap from "./RepeatComponents/sectionMap"
+import SectionServiceInfo from "./Services/sectionServiceInfo"
+import SectionServiceDoctors from "./Services/sectionServiceDoctors"
 
 function ServicesPage(props) {
   const { services, service } = props.pageContext

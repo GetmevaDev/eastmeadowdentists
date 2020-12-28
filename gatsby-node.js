@@ -106,9 +106,20 @@ exports.createPages = async function ({ actions, graphql }) {
 
   //Create service pages
   services.data.allStrapiServices.edges.forEach(({ node }, idx, array) => {
+    if (idx == 0) {
+      createPage({
+        path: `/services`,
+        component: path.resolve(`./src/components/services.js`),
+        context: {
+          service: node,
+          services: array,
+        },
+      })
+    }
+
     createPage({
       path: `/services${node.Link_services}`,
-      component: path.resolve(`./src/pages/services.js`),
+      component: path.resolve(`./src/components/services.js`),
       context: {
         service: node,
         services: array,
@@ -117,10 +128,20 @@ exports.createPages = async function ({ actions, graphql }) {
   })
 
   //Create doctor pages
-  team.data.allStrapiOurDoctors.edges.forEach(({ node }) => {
+  team.data.allStrapiOurDoctors.edges.forEach(({ node }, idx) => {
+    if (idx == 0) {
+      createPage({
+        path: `/team`,
+        component: path.resolve(`./src/components/team.js`),
+        context: {
+          doctor: node,
+        },
+      })
+    }
+
     createPage({
       path: `/team/${node.Slug}`,
-      component: path.resolve(`./src/pages/team.js`),
+      component: path.resolve(`./src/components/team.js`),
       context: {
         doctor: node,
       },

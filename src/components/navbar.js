@@ -9,24 +9,21 @@ const Navbar = () => {
   const [currentOpened, setCurrentOpened] = useState("")
   const data = useStaticQuery(graphql`
     {
-      allStrapiNavigationMenu {
-        nodes {
-          Header_Menu {
-            id
-            Name_Page
-            Link_Page
-            Link_Menu
-            Is_Link
-            Link_Group
-            Display_Name
-          }
+      strapiNavigationMenu {
+        Header_Menu {
+          Display_Name
+          Is_Link
+          Link_Group
+          Link_Menu
+          Link_Page
+          Name_Page
         }
       }
     }
   `)
 
   useEffect(() => {
-    let menuUnhandled = data.allStrapiNavigationMenu.nodes[0].Header_Menu
+    let menuUnhandled = data.strapiNavigationMenu.Header_Menu
     let menuHandled = []
 
     menuUnhandled.forEach(page => {
@@ -56,9 +53,7 @@ const Navbar = () => {
     })
 
     setMenu(menuHandled)
-  }, [data.allStrapiNavigationMenu.nodes[0].Header_Menu])
-
-  console.log(menu)
+  }, [data.strapiNavigationMenu.Header_Menu])
 
   return (
     <ul style={{ display: "flex" }} className={`menu-items`}>

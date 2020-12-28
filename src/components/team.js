@@ -1,11 +1,11 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
-import SectionMap from "../components/RepeatComponents/sectionMap"
-import SectionHeaderTeam from "../components/Team/seactionHeaderTeam"
-import SectionAboutDoctor from "../components/Team/sectionAboutDoctor"
+import Layout from "./layout"
+import SEO from "./seo"
+import SectionAppointment from "./RepeatComponents/sectionAppointment"
+import SectionMap from "./RepeatComponents/sectionMap"
+import SectionHeaderTeam from "./Team/seactionHeaderTeam"
+import SectionAboutDoctor from "./Team/sectionAboutDoctor"
 
 const TeamPage = props => {
   const { doctor } = props.pageContext
