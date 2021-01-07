@@ -274,13 +274,17 @@ header .container .box {
   @include mediaWidth_480 {
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -2;
+
+    .container {
+      z-index: 100;
+    }
 
     .links {
       margin-bottom: -1.8em;
     }
     video {
       min-width: 60%;
+      z-index: 10;
     }
   }
 }
