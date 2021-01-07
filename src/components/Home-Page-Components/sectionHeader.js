@@ -10,6 +10,7 @@ const SectionHeader = () => {
   const data = useStaticQuery(graphql`
     {
       strapiHomePage {
+        Link_Online_Check_In
         Titles {
           Pretitle
           Title
@@ -45,6 +46,7 @@ const SectionHeader = () => {
             </a>
             <LinkAppointment
               text={"Online check-in"}
+              link={data.strapiHomePage.Link_Online_Check_In}
               styles={{
                 display: "flex",
                 alignItems: "center",
