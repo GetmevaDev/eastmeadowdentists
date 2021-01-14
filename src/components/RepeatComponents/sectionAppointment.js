@@ -8,11 +8,8 @@ const SectionAppointment = ({ noMarginTop = false }) => {
       strapiHomePage {
         Text_Section_Appointment
         Section_Appointment_Image {
-          childImageSharp {
-            fixed {
-              src
-            }
-          }
+            url
+            alternativeText
         }
       }
     }
@@ -24,10 +21,11 @@ const SectionAppointment = ({ noMarginTop = false }) => {
         <div className={`img-section`}>
           <img
             src={
-              data.strapiHomePage.Section_Appointment_Image.childImageSharp
-                .fixed.src
+              data.strapiHomePage.Section_Appointment_Image[0].url
             }
-            alt="teeth"
+            alt={
+              data.strapiHomePage.Section_Appointment_Image[0].alternativeText
+            }
           />
         </div>
         <div className={`box-link-appointment`}>

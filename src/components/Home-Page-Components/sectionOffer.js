@@ -13,7 +13,8 @@ const SectionOffer = () => {
             Title
             Content
             Card_Image {
-              publicURL
+                url
+                alternativeText
             }
           }
         }
@@ -27,7 +28,7 @@ const SectionOffer = () => {
         {data.allStrapiReasons.edges.map(item => {
           return (
             <div className={`card_reason`}>
-              <img src={item.node.Card_Image.publicURL} alt="" />
+              <img src={item.node.Card_Image[0].url} alt={item.node.Card_Image[0].alternativeText} />
               <h4>{item.node.Title}</h4>
               <div
                 key={item.node.id}

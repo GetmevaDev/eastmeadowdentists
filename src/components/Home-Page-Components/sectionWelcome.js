@@ -13,7 +13,8 @@ const SectionWelcome = () => {
                   Content
               }
               Section_Welcome_Image {
-                  publicURL
+                  url
+                  alternativeText
               }
           }
       }
@@ -23,7 +24,7 @@ const SectionWelcome = () => {
     <div className={`section-welcome`}>
       <div className="container row">
         <div className={`img`}>
-          <img src={data.strapiHomePage.Section_Welcome_Image.publicURL} alt="" />
+          <img src={data.strapiHomePage.Section_Welcome_Image[0].url} alt={data.strapiHomePage.Section_Welcome_Image[0].alternativeText} />
         </div>
         <div className="content-box">
           <h3 className={`welcome-title`}>{data.strapiHomePage.Section_Welcome.Title}</h3>

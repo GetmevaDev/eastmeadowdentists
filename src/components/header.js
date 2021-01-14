@@ -28,7 +28,8 @@ class Header extends React.Component {
           {
             strapiHomePage {
               Logo {
-                publicURL
+                url
+                alternativeText
               }
             }
           }
@@ -51,7 +52,7 @@ class Header extends React.Component {
                 }}
               >
                 <Link to="/" className={`logo`}>
-                  <img src={data.strapiHomePage.Logo.publicURL} alt="" />
+                  <img src={data.strapiHomePage.Logo[0].url} alt={data.strapiHomePage.Logo[0].alternativeText} />
                 </Link>
                 <button
                   className={`button_menu`}

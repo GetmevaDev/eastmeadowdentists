@@ -24,21 +24,16 @@ const SectionComments = ({ showHeader = true }) => {
         edges {
           node {
             Photo {
-              childImageSharp {
-                fixed {
-                  src
-                }
-              }
+                url
+                alternativeText
             }
             Shown
             Name
             Rating
             Comment
             the_comment_came_from {
-              childImageSharp {
-                id
-              }
-              publicURL
+                url
+                alternativeText
             }
           }
         }
@@ -96,9 +91,9 @@ const SectionComments = ({ showHeader = true }) => {
                 <SwiperSlide className={`block-comment fb dn`}>
                   {item.node.Photo ? (
                     <img
-                      src={item.node.Photo.childImageSharp.fixed.src}
+                      src={item.node.Photo[0].url}
                       className={`portrait`}
-                      alt={""}
+                      alt={item.node.Photo[0].alternativeText}
                     />
                   ) : (
                     <img src={Avatar} className={`portrait`} alt={""} />
@@ -118,8 +113,8 @@ const SectionComments = ({ showHeader = true }) => {
                   {item.node.the_comment_came_from && (
                     <img
                       className={`google`}
-                      src={item.node.the_comment_came_from.publicURL}
-                      alt=""
+                      src={item.node.the_comment_came_from[0].url}
+                      alt={item.node.the_comment_came_from[0].alternativeText}
                     />
                   )}
                 </SwiperSlide>

@@ -18,7 +18,7 @@ const SectionHeader = () => {
           Link_Video
         }
         Background_Header_Section {
-          publicURL
+          url
         }
       }
     }
@@ -27,7 +27,7 @@ const SectionHeader = () => {
     <section
       className={"section-header"}
       style={{
-        background: `url(${data.strapiHomePage.Background_Header_Section.publicURL})`,
+        background: `url(${data.strapiHomePage.Background_Header_Section[0].url})`,
       }}
     >
       <div
