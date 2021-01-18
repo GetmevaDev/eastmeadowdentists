@@ -13,7 +13,8 @@ const SectionServiceDoctors = () => {
             Name
             Slug
             Photo_Avatar {
-              publicURL
+                url
+                alternativeText
             }
           }
         }
@@ -31,8 +32,8 @@ const SectionServiceDoctors = () => {
               <div className="per" key={i}>
                 <div className="doc-img">
                   <img
-                    src={doctor.node.Photo_Avatar.publicURL}
-                    alt={doctor.node.Name}
+                    src={doctor.node.Photo_Avatar[0].url}
+                    alt={doctor.node.Photo_Avatar[0].alternativeText}
                   />
                 </div>
                 <div className="pe">

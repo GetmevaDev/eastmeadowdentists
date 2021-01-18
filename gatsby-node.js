@@ -21,11 +21,8 @@ exports.createPages = async function ({ actions, graphql }) {
             }
             Photo_Team {
               id
-              childImageSharp {
-                fixed(width: 1000) {
-                  src
-                }
-              }
+            url
+          alternativeText
             }
           }
         }
@@ -50,6 +47,9 @@ exports.createPages = async function ({ actions, graphql }) {
               Image_Width
               Title
             }
+            Schemaorg{
+             Code_schema
+            } 
           }
         }
       }

@@ -31,7 +31,7 @@ const SectionContactInfo = ({ contacts }) => {
             <WorkingHours />
           </div>
           <div className="contact-img">
-            <img src={contacts.Building_Photo.publicURL} alt="Building Photo" />
+            <img src={contacts.Building_Photo[0].url} alt={contacts.Building_Photo[0].alternativeText} />
           </div>
         </div>
       </div>

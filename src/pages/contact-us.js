@@ -17,7 +17,8 @@ function ContactUsPage() {
         Number_Phone
         Email
         Building_Photo {
-          publicURL
+            url
+            alternativeText
         }
         Title
         Subtitle

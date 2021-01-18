@@ -12,7 +12,8 @@ const SectionReason = () =>{
               edges {
                   node {
                       Image {
-                          publicURL
+                          url
+                          alternativeText
                       }
                       Title
                       Text
@@ -33,7 +34,7 @@ const SectionReason = () =>{
           data.allStrapiWhyChooseUses.edges.map(item => {
             return(
               <div className={`card`}>
-                <img src={item.node.Image.publicURL} alt="" />
+                <img src={item.node.Image[0].url} alt={item.node.Image[0].alternativeText} />
                 <h5>{item.node.Title}</h5>
                 <p>{item.node.Text}</p>
               </div>

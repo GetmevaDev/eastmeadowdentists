@@ -11,11 +11,8 @@ const SectionTeam = () => {
       {
           strapiPhotoOurTeam {
               Photo {
-                  childImageSharp {
-                      fluid(maxWidth: 2000) {
-                         ...GatsbyImageSharpFluid
-                      }
-                  }
+                  url
+                  alternativeText
               }
           }
       }
@@ -26,10 +23,10 @@ const SectionTeam = () => {
       <h2 className={`title-section`}>Meet Our Team</h2>
       <div className="container">
           <div className="box-img-team">
-            <Img
-            fluid={data.strapiPhotoOurTeam.Photo.childImageSharp.fluid}
-            />
-            {/*<img src={data.strapiPhotoOurTeam.Photo.childImageSharp.fixed.src} alt="Our Team" />*/}
+            {/*<Img*/}
+            {/*fluid={data.strapiPhotoOurTeam.Photo.childImageSharp.fluid}*/}
+            {/*/>*/}
+            <img src={data.strapiPhotoOurTeam.Photo[0].url} alt={data.strapiPhotoOurTeam.Photo[0].alternativeText} />
 
           </div>
       </div>

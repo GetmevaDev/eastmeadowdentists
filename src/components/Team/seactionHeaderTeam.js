@@ -31,8 +31,8 @@ const SectionHeaderTeam = ({ doctor }) => {
       </div>
       <div className="image-box image-centered">
         <img
-          src={doctor.Photo_Team.childImageSharp.fixed.src}
-          alt={doctor.Name}
+          src={doctor.Photo_Team[0].url}
+          alt={doctor.Photo_Team[0].alternativeText}
         />
       </div>
     </section>

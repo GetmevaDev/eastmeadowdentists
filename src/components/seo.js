@@ -10,7 +10,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { Location } from "@reach/router"
 
-function SEO({ seo, location }) {
+function SEO({ seo, location, schemaMarkup }) {
   const common = useStaticQuery(graphql`
     {
       strapiCommonMetaData {
@@ -83,7 +83,11 @@ function SEO({ seo, location }) {
           content: seo.Description,
         },
       ]}
-    />
+    >
+      {schemaMarkup &&
+      <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+      }
+    </Helmet>
   )
 }
 

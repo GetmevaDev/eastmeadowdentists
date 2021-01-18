@@ -45,11 +45,8 @@ class SectionGallery extends React.Component {
               Gallery {
                 id
                 Photo {
-                  childImageSharp {
-                    fixed(width: 2000) {
-                      src
-                    }
-                  }
+                   url
+                   alternativeText
                 }
               }
             }
@@ -86,8 +83,8 @@ class SectionGallery extends React.Component {
                       >
                         <div className={`zoom`}></div>
                         <img
-                          src={item.Photo.childImageSharp.fixed.src}
-                          alt={""}
+                          src={item.Photo[0].url}
+                          alt={item.Photo[0].alternativeText}
                         />
                       </div>
                     </SwiperSlide>
@@ -120,7 +117,7 @@ class SectionGallery extends React.Component {
                         : " "
                     }`}
                   >
-                    <img src={item.Photo.childImageSharp.fixed.src} alt={""} />
+                    <img src={item.Photo[0].url} alt={item.Photo[0].alternativeText} />
                   </div>
                 </>
               )
