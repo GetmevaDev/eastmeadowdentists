@@ -17,7 +17,6 @@ function ServicesPage(props) {
           {service.SEO && <SEO seo={service.SEO} schemaMarkup={service.Schemaorg && service.Schemaorg !== null ?
            JSON.parse(service.Schemaorg.Code_schema.replace(/\s+/g, ' '))  : null
           } />}
-          {console.log(JSON.parse(service.Schemaorg.Code_schema.replace(/\s+/g, ' ')))}
           <SectionHeader
             headerPrimary={service.Name_services}
             headerSecondary="Our Services"
