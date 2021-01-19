@@ -1,0 +1,39 @@
+
+
+.adaptiveCall{
+  @media (min-width: 700px){
+    display: none;
+  }
+  display: flex;
+  //align-items: center;
+  justify-content: space-around;
+  width: 100% !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 10;
+
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 12px;
+
+    color: #69a6d5;
+    flex-grow: 1;
+
+    img{
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+  a:last-child{
+    flex-grow: 2;
+    background: #69a6d5;
+    color: #fff;
+  }
+}

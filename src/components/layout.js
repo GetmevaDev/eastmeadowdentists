@@ -13,6 +13,7 @@ import Header from "./header"
 import Footer from "./footer"
 import Call from "./call"
 import "./layout.css"
+import CallAdaptive from "./CallAdaptive/CallAdaptive"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,6 +33,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
           <Footer />
           <Call />
+        <CallAdaptive />
       </div>
     </>
   )

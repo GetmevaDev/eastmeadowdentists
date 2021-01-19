@@ -1712,6 +1712,9 @@ header .container .box {
   color: #ffffff;
   -webkit-transform: rotate(-90deg) translateY(85px) translateX(32px);
   transform: rotate(-90deg) translateY(85px) translateX(32px);
+  @media (max-width: 700px){
+    display: none;
+  }
   @include mediaWidth_700 {
     bottom: 0;
     right: 0;
