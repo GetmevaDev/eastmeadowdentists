@@ -30,7 +30,7 @@ const SectionServices = () => {
           data.allStrapiServices.edges.map(item => {
             return(
               <div className={`Link_services`}>
-                <Link className={`link`} to={item.node.Link_services}>
+                <Link className={`link`} to={`/services${item.node.Link_services}`}>
                   <img src={item.node.Image_services.publicURL} alt="" />
                   <h4>{item.node.Name_services}</h4>
                 </Link>
