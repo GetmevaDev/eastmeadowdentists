@@ -9,13 +9,7 @@ const SectionMap = () => {
       {
           strapiContacts {
               Link_on_map
-              Img_map {
-                  childImageSharp {
-                      fluid(maxWidth: 2000){
-                          ...GatsbyImageSharpFluid
-                      }
-                  }
-              }
+         
           }
       }
   `)
@@ -23,11 +17,16 @@ const SectionMap = () => {
   return(
     <section className={`section-map`}>
       <div className="container w1200">
-        <Link to={data.strapiContacts.Link_on_map}>
-            <Img
-            fluid={data.strapiContacts.Img_map.childImageSharp.fluid}
-            />
-        </Link>
+        {
+          data.strapiContacts.Link_on_map && data.strapiContacts.Link_on_map !== null ?
+            (
+              <iframe
+                src={data.strapiContacts.Link_on_map}
+                width="100%" height="450" frameBorder="0" style={{ border: 0 }} allowFullScreen="" aria-hidden="false"
+                tabIndex="0"></iframe>
+            ) : null
+        }
+
       </div>
     </section>
   )

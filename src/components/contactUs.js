@@ -16,7 +16,7 @@ const ContactUs = () => {
               Text_Location
               Link_on_map
               Number_Phone
-              Email
+        
           }
       }
   `)
@@ -32,10 +32,7 @@ const ContactUs = () => {
             <img src={Location} alt="Location" />
             <a href={data.strapiContacts.Link_on_map}>{data.strapiContacts.Text_Location}</a>
         </li>
-        <li>
-            <img src={Mail} alt="Mail" />
-            <a href={`mailto:${data.strapiContacts.Email}`}>{data.strapiContacts.Email}</a>
-        </li>
+
         <li>
             <img src={Phone} alt="Phone" />
             <a href={`tel:${data.strapiContacts.Number_Phone}`}>{data.strapiContacts.Number_Phone}</a>

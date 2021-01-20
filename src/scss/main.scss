@@ -525,6 +525,16 @@ header .container .box {
     .img {
       @include mediaWidth_992 {
         max-width: 250px;
+
+      }
+      .find-a-top-doc{
+        @include mediaWidth_992 {
+          bottom: -23px !important;
+          right: -21px !important;
+          img{
+            max-height: 139px !important;
+          }
+        }
       }
     }
   }
@@ -1035,10 +1045,9 @@ header .container .box {
     @include mediaWidth_424 {
       padding: 0;
     }
-    a {
-      @include mediaWidth_424 {
-        border-radius: 0;
-      }
+    iframe{
+      border-radius: 10px;
+      z-index: 10;
     }
   }
   .w1200 {
