@@ -15,7 +15,7 @@ function ContactUsPage() {
         Text_Location
         Link_on_map
         Number_Phone
-        Email
+        
         Building_Photo {
             url
             alternativeText

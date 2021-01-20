@@ -17,10 +17,7 @@ const SectionContactInfo = ({ contacts }) => {
                 <img src={Location} alt="Location" />
                 <a href={contacts.Link_on_map}>{contacts.Text_Location}</a>
               </li>
-              <li>
-                <img src={Mail} alt="Mail" />
-                <a href={`mailto:${contacts.Email}`}>{contacts.Email}</a>
-              </li>
+
               <li>
                 <img src={Phone} alt="Phone" />
                 <a href={`tel:${contacts.Number_Phone}`}>
