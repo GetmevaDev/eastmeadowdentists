@@ -50,6 +50,12 @@ const SectionComments = ({ showHeader = true }) => {
           }
         }
       }
+        TitleSection: strapiHomePage {
+            Section_Comment {
+                Text
+                Title
+            }
+        }
     }
   `)
   SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay])
@@ -57,11 +63,9 @@ const SectionComments = ({ showHeader = true }) => {
     <section className={`section-comments ${showHeader ? "show-header" : ""}`}>
       {showHeader && (
         <>
-          <h2 className="title-section">What people say</h2>
+          <h2 className="title-section">{data.TitleSection.Section_Comment.Title}</h2>
           <p className={`reviews_text`}>
-            This site does everything you could possibly want it to do and not
-            only that, beautifully carefully designed and extremely intuitive to
-            use.
+            {data.TitleSection.Section_Comment.Text}
           </p>
         </>
       )}

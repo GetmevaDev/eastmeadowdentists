@@ -18,13 +18,19 @@ const SectionServices = () => {
                   }
               }
           }
+          titleSection:  strapiHomePage {
+              Section_Services {
+                  Text
+                  Title
+              }
+          }
       }
   `)
 
   return(
     <section className={`section-services`}>
-      <h2 className="title-section">Our Services</h2>
-      <p className="reviews_text">This site does everything you could possibly want it to do and not only that, beautifully carefully designed and extremely intuitive to use.</p>
+      <h2 className="title-section">{data.titleSection.Section_Services.Title}</h2>
+      <p className="reviews_text">{data.titleSection.Section_Services.Text}</p>
       <div className="container w1200 row">
         {
           data.allStrapiServices.edges.map(item => {

@@ -20,13 +20,19 @@ const SectionReason = () =>{
                   }
               }
           }
+          titleSection:  strapiHomePage {
+              Section_Reason {
+                  Title
+                  Text
+              }
+          }
       }
   `)
 
   return(
     <section className={`section-reason`}>
-      <h2 className="title-section">Why choose Us?</h2>
-      <p className={`reviews_text`}>This site does everything you could possibly want it to do and not only that, beautifully carefully designed and extremely intuitive to use.</p>
+      <h2 className="title-section">{data.titleSection.Section_Reason.Title}</h2>
+      <p className={`reviews_text`}>{data.titleSection.Section_Reason.Text}</p>
 
 
       <div className="container row bg-container">
