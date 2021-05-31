@@ -15,6 +15,7 @@ import Call from "./call"
 import "./layout.css"
 import CallAdaptive from "./CallAdaptive/CallAdaptive"
 
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
