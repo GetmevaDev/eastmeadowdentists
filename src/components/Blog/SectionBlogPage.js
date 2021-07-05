@@ -28,6 +28,13 @@ const SectionBlogPage = props => {
         </div>
       </div>
       <div className="card-page-content">
+        {console.log(post)}
+        {post.Image.length !== 0 ?
+          <img style={{
+            marginBottom: '40px'
+          }} src={post.Image[0].url} alt={post.Image[0].alternativeText} /> :
+          null}
+
         <h6>{formatDate(post.Published_Date)}</h6>
         <h3>{post.Title}</h3>
         <div

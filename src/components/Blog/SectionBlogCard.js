@@ -11,9 +11,10 @@ const SectionBlogCard = ({ post, isReadMore = true }) => {
       <div
         key={`body`}
         id="___gatsby"
-        dangerouslySetInnerHTML={{ __html: escapeHtml(post.Body) }}
+        dangerouslySetInnerHTML={{ __html: crushText(post.Body) }}
         className="card-content-p"
       />
+      {console.log(typeof escapeHtml(post.Body))}
       {isReadMore ? (
         <div className="btn-blog">
           <button>
@@ -33,6 +34,10 @@ const SectionBlogCard = ({ post, isReadMore = true }) => {
 
 function escapeHtml(unsafe) {
   return unsafe ? unsafe.replace(/<\/?[^>]+(>|$)/g, " ") : null
+}
+
+function crushText(text){
+  return typeof text === "string" ? escapeHtml(text).substring(0,70).concat('...') : null
 }
 
 export default SectionBlogCard

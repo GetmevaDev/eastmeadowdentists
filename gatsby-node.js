@@ -62,6 +62,10 @@ exports.createPages = async function ({ actions, graphql }) {
           node {
             Body
             Slug
+              Image{
+                alternativeText
+                url
+              }
             Title
             Published_Date
             SEO {
