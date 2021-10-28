@@ -38,7 +38,7 @@ const SectionComments = ({ showHeader = true }) => {
           }
         }
       }
-      commentVideo: allStrapiCommetsVideos(limit: 2) {
+      commentVideo: allStrapiCommetsVideos {
         edges {
           node {
             Link_video
@@ -136,11 +136,29 @@ const SectionComments = ({ showHeader = true }) => {
         </Swiper>
 
         <div className={`box-comment_video row`}>
+          <Swiper
+            className={`box-comment--videos`}
+            slidesPerView={1}
+            spaceBetween={50}
+            watchSlidesVisibility={true}
+            watchSlidesProgress={true}
+            // navigation={{
+            //   nextEl: ".swiper-button-prev",
+            //   prevEl: ".swiper-button-next",
+            // }}
+            breakpoints={{
+              // when window width is >= 640px
+              700: {
+                slidesPerView: 2,
+              },
+            }}
+          >
           {data.commentVideo.edges.map(item => {
             return (
-              <div className={`block-comment_video`}>
-                <div className="container-video-comment">
-                  <iframe
+              <SwiperSlide className={`block-comment_video`}>
+                <div className={`container-slide`}>
+                  <div className="container-video-comment">
+                    <iframe
                     width="100%"
                     height="100%"
                     src={item.node.Link_video}
@@ -148,31 +166,36 @@ const SectionComments = ({ showHeader = true }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
+                  </div>
+
+                  <div className={`row`}>
+                    <div className="name_and_rating">
+                      <h4 className={`name`}>{item.node.Name}</h4>
+                      <div className={`stars_comment-video`}>
+                        {Array.from(Array(item.node.Rating), (item, i) => {
+                          return (
+                            <span key={i}>
+                              <img src={Star} alt="star" />
+                            </span>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    {item.node.the_comment_came_from && (
+                      <img
+                        src={item.node.the_comment_came_from.publicURL}
+                        alt=""
+                      />
+                    )}
+                  </div>
                 </div>
 
-                <div className={`row`}>
-                  <div className="name_and_rating">
-                    <h4 className={`name`}>{item.node.Name}</h4>
-                    <div className={`stars_comment-video`}>
-                      {Array.from(Array(item.node.Rating), (item, i) => {
-                        return (
-                          <span key={i}>
-                            <img src={Star} alt="star" />
-                          </span>
-                        )
-                      })}
-                    </div>
-                  </div>
-                  {item.node.the_comment_came_from && (
-                    <img
-                      src={item.node.the_comment_came_from.publicURL}
-                      alt=""
-                    />
-                  )}
-                </div>
-              </div>
+
+
+              </SwiperSlide>
             )
           })}
+          </Swiper>
         </div>
       </div>
     </section>

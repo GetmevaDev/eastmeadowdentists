@@ -687,6 +687,11 @@ header .container .box {
 .show-header {
   padding-top: 82px;
 }
+
+.box-comment--videos{
+  margin-top: 0;
+  max-width: 1220px;
+}
 .box-comment_video {
   margin-top: 50px;
 
@@ -694,12 +699,26 @@ header .container .box {
     flex-direction: column;
   }
   .block-comment_video {
-    margin-right: 15px;
-    margin-left: 15px;
-    flex-basis: (1200px / 2) - 30;
+    //margin-right: 15px;
+    //margin-left: 15px;
+    //flex-basis: (1200px / 2) - 30;
     @include mediaWidth_700 {
+
       max-height: 450px !important;
     }
+
+    .container-slide{
+      @include mediaWidth_700{
+        max-width: 480px;
+      }
+      @include mediaWidth_480{
+        max-width: 350px;
+      }
+      @include mediaWidth_424{
+        max-width: 320px;
+      }
+    }
+
     .row {
       justify-content: space-between;
       align-items: center;
