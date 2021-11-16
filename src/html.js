@@ -33,6 +33,7 @@ export default function HTML(props) {
       dangerouslySetInnerHTML={{ __html: props.body }}
     />
     {props.postBodyComponents}
+    <script src="//code.tidio.co/8lasjfcaqnmx8gexjih5djbwxoeuc8un.js" async></script>
     </body>
     </html>
   )
