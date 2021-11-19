@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import ADA from "../../images/ADA_Patient_Screening_Form.pdf"
 import promoVideo from "../../images/promo-banner.mp4"
-import promoPoster from "../../images/promo-banner.png"
+import promoPoster from "../../images/promo-banner-4bda035c09ee3c42f52f6ac655fb8a61 (1).webp"
 
 import LinkAppointment from "../appointmentLink"
 
