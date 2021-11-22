@@ -1,6 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
-
+import Image from "../image"
 
 
 const SectionReason = () =>{
@@ -11,9 +11,19 @@ const SectionReason = () =>{
           allStrapiWhyChooseUses(limit: 3) {
               edges {
                   node {
-                      Image {
-                          url
-                          alternativeText
+                     mobileImage: Image {
+                        childImageSharp {
+                            fixed(width:80){
+                           ...GatsbyImageSharpFixed_withWebp_noBase64
+                          }
+                        }
+                      }  
+                     desktopImage: Image {
+                       childImageSharp {
+                            fixed(width:80){
+                           ...GatsbyImageSharpFixed_withWebp_noBase64
+                          }
+                        }
                       }
                       Title
                       Text
@@ -40,7 +50,12 @@ const SectionReason = () =>{
           data.allStrapiWhyChooseUses.edges.map(item => {
             return(
               <div className={`card`}>
-                <img src={item.node.Image[0].url} alt={item.node.Image[0].alternativeText} />
+                <Image
+                image={item.node.mobileImage.childImageSharp.fixed}
+                desktopImage={item.node.desktopImage.childImageSharp.fixed}
+                alt={`icon`}
+                />
+                {/*<img src={item.node.Image[0].url} alt={item.node.Image[0].alternativeText} />*/}
                 <h5>{item.node.Title}</h5>
                 <p>{item.node.Text}</p>
               </div>

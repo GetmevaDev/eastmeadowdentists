@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery, Link} from "gatsby"
+import Image from "../image"
 
 
 
@@ -12,8 +13,19 @@ const SectionServices = () => {
                   node {
                       Name_services
                       Link_services
-                      Image_services {
-                          publicURL
+                     mobileImage: Image_services {
+                           childImageSharp {
+                            fixed(width:36){
+                             ...GatsbyImageSharpFixed_withWebp_noBase64
+                            }
+                          }
+                      }  
+                     desktopImage: Image_services {
+                           childImageSharp {
+                          fixed(width:36){
+                           ...GatsbyImageSharpFixed_withWebp_noBase64
+                          }
+                        }
                       }
                   }
               }
@@ -37,7 +49,12 @@ const SectionServices = () => {
             return(
               <div className={`Link_services`}>
                 <Link className={`link`} to={`/services${item.node.Link_services}`}>
-                  <img src={item.node.Image_services.publicURL} alt="" />
+                  <Image
+                  image={item.node.mobileImage.childImageSharp.fixed}
+                  desktopImage={item.node.desktopImage.childImageSharp.fixed}
+                  alt={`icon`}
+                  />
+                  {/*<img src={item.node.Image_services.publicURL} alt="" />*/}
                   <h4>{item.node.Name_services}</h4>
                 </Link>
               </div>

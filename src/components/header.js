@@ -2,6 +2,7 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import Image from "./image"
 import Navbar from "./navbar"
 import LinkAppointment from "./appointmentLink"
 import Button from "../images/burger.svg"
@@ -26,10 +27,22 @@ class Header extends React.Component {
       <StaticQuery
         query={graphql`
           {
-            strapiHomePage {
+           mobileImage: strapiHomePage {
               Logo {
-                url
-                alternativeText
+                childImageSharp {
+                  fixed(width:500){
+                   ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
+              }
+            }
+              desktopImage: strapiHomePage {
+              Logo {
+                childImageSharp {
+                  fixed(width:900){
+                   ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
               }
             }
           }
@@ -52,7 +65,15 @@ class Header extends React.Component {
                 }}
               >
                 <Link to="/" className={`logo`}>
-                  <img src={data.strapiHomePage.Logo[0].url} alt={data.strapiHomePage.Logo[0].alternativeText} />
+                  <Image
+                  image={data.mobileImage.Logo.childImageSharp.fixed}
+                  alt={`Logo`}
+                  desktopImage={data.desktopImage.Logo.childImageSharp.fixed}
+                  styles={{
+                    width:150,
+                  }}
+                  />
+                  {/*<img src={data.strapiHomePage.Logo[0].url} alt={data.strapiHomePage.Logo[0].alternativeText} />*/}
                 </Link>
                 <button
                   className={`button_menu`}

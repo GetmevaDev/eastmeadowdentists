@@ -2,14 +2,26 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import LinkAppointment from "../appointmentLink"
 
+import Image from "../image"
+
 const SectionAppointment = ({ noMarginTop = false }) => {
   const data = useStaticQuery(graphql`
     {
       strapiHomePage {
         Text_Section_Appointment
-        Section_Appointment_Image {
-            url
-            alternativeText
+       mobileImage: Section_Appointment_Image {
+              childImageSharp {
+                  fixed(width: 400){
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
+        }   
+       desktopImage: Section_Appointment_Image {
+            childImageSharp {
+                  fixed(width: 800){
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
         }
       }
     }
@@ -19,14 +31,18 @@ const SectionAppointment = ({ noMarginTop = false }) => {
     <section className={`section-appointment ${noMarginTop ? 'noMarginTop' : ''}`}>
       <div className="container row">
         <div className={`img-section`}>
-          <img
-            src={
-              data.strapiHomePage.Section_Appointment_Image[0].url
-            }
-            alt={
-              data.strapiHomePage.Section_Appointment_Image[0].alternativeText
-            }
+          <Image
+          image={data.strapiHomePage.mobileImage.childImageSharp.fixed}
+          desktopImage={data.strapiHomePage.desktopImage.childImageSharp.fixed}
           />
+          {/*<img*/}
+          {/*  src={*/}
+          {/*    data.strapiHomePage.Section_Appointment_Image[0].url*/}
+          {/*  }*/}
+          {/*  alt={*/}
+          {/*    data.strapiHomePage.Section_Appointment_Image[0].alternativeText*/}
+          {/*  }*/}
+          {/*/>*/}
         </div>
         <div className={`box-link-appointment`}>
           <h2 className={`title-section-appointment`}>

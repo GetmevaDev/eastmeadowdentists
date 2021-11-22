@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import LinkAppointment from "../appointmentLink"
+import Image from "../image"
 
 const SectionPromotions = () => {
   const data = useStaticQuery(graphql`
@@ -11,9 +12,19 @@ const SectionPromotions = () => {
           node {
             Title
             Content
-            Card_Image {
-              url
-              alternativeText
+               mobileImage: Card_Image {
+                 childImageSharp {
+                 fixed(width:80){
+                   ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                  }
+              } 
+               desktopImage: Card_Image {
+                 childImageSharp {
+                 fixed(width:80){
+                   ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+              }
             }
           }
         }
@@ -27,7 +38,12 @@ const SectionPromotions = () => {
         {data.allStrapiReasons.edges.map(item => {
           return (
             <div className={`card_reason`}>
-              <img src={item.node.Card_Image[0].url} alt={item.node.Card_Image[0].alternativeText} />
+              <Image
+                image={item.node.mobileImage.childImageSharp.fixed}
+                desktopImage={item.node.desktopImage.childImageSharp.fixed}
+                alt={`Icon`}
+              />
+              {/*<img src={item.node.Card_Image[0].url} alt={item.node.Card_Image[0].alternativeText} />*/}
               <h4>{item.node.Title}</h4>
               <div
                 key={item.node.id}

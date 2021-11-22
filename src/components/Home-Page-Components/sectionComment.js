@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
+import Image from "../image"
 import SwiperCore, { Navigation, Pagination, Scrollbar, Autoplay } from "swiper"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -23,17 +24,37 @@ const SectionComments = ({ showHeader = true }) => {
       allStrapiComments {
         edges {
           node {
-            Photo {
-                url
-                alternativeText
+           mobileImage: Photo {
+                 childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
+            }
+           desktopImage: Photo {
+               childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
             }
             Shown
             Name
             Rating
             Comment
-            the_comment_came_from {
-                url
-                alternativeText
+          mobileImageGoogle: the_comment_came_from {
+             childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
+            }  
+           desktopImageGoogle: the_comment_came_from {
+            childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
             }
           }
         }
@@ -44,8 +65,19 @@ const SectionComments = ({ showHeader = true }) => {
             Link_video
             Name
             Rating
-            the_comment_came_from {
-              publicURL
+          mobileImageGoogle: the_comment_came_from {
+               childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
+            }
+            desktopImageGoogle: the_comment_came_from {
+               childImageSharp {
+                  fixed(width: 80){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+              }
             }
           }
         }
@@ -93,12 +125,19 @@ const SectionComments = ({ showHeader = true }) => {
             if (item.node.Shown) {
               return (
                 <SwiperSlide className={`block-comment fb dn`}>
-                  {item.node.Photo ? (
-                    <img
-                      src={item.node.Photo[0].url}
-                      className={`portrait`}
-                      alt={item.node.Photo[0].alternativeText}
+                  {!item.node.Photo ? (
+                    <Image
+                    image={item.node.mobileImage.childImageSharp.fixed}
+                    desktopImage={item.node.desktopImage.childImageSharp.fixed}
+                    alt={`Photo`}
+                    className={`portrait`}
                     />
+
+                    // <img
+                    //   src={item.node.Photo[0].url}
+                    //   className={`portrait`}
+                    //   alt={item.node.Photo[0].alternativeText}
+                    // />
                   ) : (
                     <img src={Avatar} className={`portrait`} alt={""} />
                   )}
@@ -114,11 +153,17 @@ const SectionComments = ({ showHeader = true }) => {
                   </div>
 
                   <p className={`comment`}>{item.node.Comment}</p>
-                  {item.node.the_comment_came_from && (
-                    <img
+                  {item.node.the_comment_came_from || (
+                    // <img
+                    //   className={`google`}
+                    //   src={item.node.the_comment_came_from[0].url}
+                    //   alt={item.node.the_comment_came_from[0].alternativeText}
+                    // />
+                    <Image
+                      image={item.node.mobileImageGoogle.childImageSharp.fixed}
+                      desktopImage={item.node.desktopImageGoogle.childImageSharp.fixed}
+                      alt={`Photo`}
                       className={`google`}
-                      src={item.node.the_comment_came_from[0].url}
-                      alt={item.node.the_comment_came_from[0].alternativeText}
                     />
                   )}
                 </SwiperSlide>
@@ -159,6 +204,7 @@ const SectionComments = ({ showHeader = true }) => {
                 <div className={`container-slide`}>
                   <div className="container-video-comment">
                     <iframe
+                    loading={`lazy`}
                     width="100%"
                     height="100%"
                     src={item.node.Link_video}
@@ -181,11 +227,16 @@ const SectionComments = ({ showHeader = true }) => {
                         })}
                       </div>
                     </div>
-                    {item.node.the_comment_came_from && (
-                      <img
-                        src={item.node.the_comment_came_from.publicURL}
-                        alt=""
+                    {item.node.the_comment_came_from || (
+                      <Image
+                        image={item.node.mobileImageGoogle.childImageSharp.fixed}
+                        desktopImage={item.node.desktopImageGoogle.childImageSharp.fixed}
+                        alt={`google`}
                       />
+                      // <img
+                      //   src={item.node.the_comment_came_from.publicURL}
+                      //   alt=""
+                      // />
                     )}
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const SectionHeader = () => {
           Subtitle
           Link_Video
         }
-        Background_Header_Section {
+         Background_Header_Section {
           url
         }
       }

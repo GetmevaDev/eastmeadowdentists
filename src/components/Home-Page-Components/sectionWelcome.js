@@ -1,6 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
-
+import Image from "../image"
 
 
 const SectionWelcome = () => {
@@ -10,18 +10,38 @@ const SectionWelcome = () => {
           strapiHomePage {
               Findatopdoc {
                   Link
-                  Image {
-                      url
-                      alternativeText
+                  mobileImage: Image {
+                      childImageSharp {
+                        fixed(width: 300){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+                    }
+                  } 
+                  desktopImage: Image {
+                      childImageSharp {
+                       fixed(width: 400){
+                        ...GatsbyImageSharpFixed_withWebp_noBase64
+                      }
+                    }
                   }
               }
               Section_Welcome {
                   Title
                   Content
               }
-              Section_Welcome_Image {
-                  url
-                  alternativeText
+              mobileImage: Section_Welcome_Image {
+                childImageSharp {
+                  fixed(width: 200){
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
+              }
+              desktopImage: Section_Welcome_Image {
+                childImageSharp {
+                  fixed(width: 400){
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
+                  }
+                }
               }
           }
       }
@@ -31,7 +51,12 @@ const SectionWelcome = () => {
     <div className={`section-welcome`}>
       <div className="container row">
         <div className={`img`}>
-          <img src={data.strapiHomePage.Section_Welcome_Image[0].url} alt={data.strapiHomePage.Section_Welcome_Image[0].alternativeText} />
+          <Image
+          image={data.strapiHomePage.mobileImage.childImageSharp.fixed}
+          desktopImage={data.strapiHomePage.desktopImage.childImageSharp.fixed}
+          alt={`teeth-with-tooth-brush`}
+          />
+          {/*<img src={data.strapiHomePage.Section_Welcome_Image[0].url} alt={data.strapiHomePage.Section_Welcome_Image[0].alternativeText} />*/}
           {
             data.strapiHomePage.Findatopdoc && data.strapiHomePage.Findatopdoc !== null ?
               (
@@ -41,7 +66,12 @@ const SectionWelcome = () => {
                   right: `-62px`,
                 }}>
                   <a href={data.strapiHomePage.Findatopdoc.Link}>
-                    <img style={{maxHeight: 219}} src={data.strapiHomePage.Findatopdoc.Image[0].url} alt={data.strapiHomePage.Findatopdoc.Image[0].alternativeText} />
+                    <Image
+                      image={data.strapiHomePage.Findatopdoc.mobileImage.childImageSharp.fixed}
+                      desktopImage={data.strapiHomePage.Findatopdoc.desktopImage.childImageSharp.fixed}
+                      alt={`Findatopdoc`}
+                    />
+                    {/*<img style={{maxHeight: 219}} src={data.strapiHomePage.Findatopdoc.Image[0].url} alt={data.strapiHomePage.Findatopdoc.Image[0].alternativeText} />*/}
                   </a>
                 </div>
 
