@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Image from "../image"
+import YouTube from 'react-youtube';
 import SwiperCore, { Navigation, Pagination, Scrollbar, Autoplay } from "swiper"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -91,6 +92,11 @@ const SectionComments = ({ showHeader = true }) => {
     }
   `)
   SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay])
+
+  const opts = {
+    height: '100%',
+    width: '100%',
+  }
   return (
     <section className={`section-comments ${showHeader ? "show-header" : ""}`}>
       {showHeader && (
@@ -212,6 +218,21 @@ const SectionComments = ({ showHeader = true }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
+                    <YouTube
+                      videoId={item.node.Link_video}                  // defaults -> null
+                      // id={string}                       // defaults -> null
+                      // className={string}                // defaults -> null
+                      // containerClassName={string}       // defaults -> ''
+                      opts={opts}                        // defaults -> {}
+                      // onReady={func}                    // defaults -> noop
+                      // onPlay={func}                     // defaults -> noop
+                      // onPause={func}                    // defaults -> noop
+                      // onEnd={func}                      // defaults -> noop
+                      // onError={func}                    // defaults -> noop
+                      // onStateChange={func}              // defaults -> noop
+                      // onPlaybackRateChange={func}       // defaults -> noop
+                      // onPlaybackQualityChange={func}    // defaults -> noop
+                    />
                   </div>
 
                   <div className={`row`}>

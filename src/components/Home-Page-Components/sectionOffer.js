@@ -69,7 +69,7 @@ const SectionOffer = () => {
                   textDecoration: "none",
                   color: "#fff",
                   background: "#214C9E",
-                  marginTop: "1em",
+                  marginTop: "auto",
                   transition: "color 0.3s, background 0.3s",
                 }}
               />
