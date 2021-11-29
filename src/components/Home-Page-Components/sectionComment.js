@@ -2,7 +2,8 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Image from "../image"
-import YouTube from 'react-youtube';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 import SwiperCore, { Navigation, Pagination, Scrollbar, Autoplay } from "swiper"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -209,30 +210,19 @@ const SectionComments = ({ showHeader = true }) => {
               <SwiperSlide className={`block-comment_video`}>
                 <div className={`container-slide`}>
                   <div className="container-video-comment">
-                    <iframe
-                    loading={`lazy`}
-                    width="100%"
-                    height="100%"
-                    src={item.node.Link_video}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                  {/*  <YouTube*/}
-                  {/*    // videoId={item.node.Link_video}                  // defaults -> null*/}
-                  {/*    // id={string}                       // defaults -> null*/}
-                  {/*    // className={string}                // defaults -> null*/}
-                  {/*    // containerClassName={string}       // defaults -> ''*/}
-                  {/*    // opts={opts}                        // defaults -> {}*/}
-                  {/*    // onReady={func}                    // defaults -> noop*/}
-                  {/*    // onPlay={func}                     // defaults -> noop*/}
-                  {/*    // onPause={func}                    // defaults -> noop*/}
-                  {/*    // onEnd={func}                      // defaults -> noop*/}
-                  {/*    // onError={func}                    // defaults -> noop*/}
-                  {/*    // onStateChange={func}              // defaults -> noop*/}
-                  {/*    // onPlaybackRateChange={func}       // defaults -> noop*/}
-                  {/*    // onPlaybackQualityChange={func}    // defaults -> noop*/}
+                    {/*<iframe*/}
+                    {/*loading={`lazy`}*/}
+                    {/*width="100%"*/}
+                    {/*height="100%"*/}
+                    {/*src={item.node.Link_video}*/}
+                    {/*frameBorder="0"*/}
+                    {/*allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+                    {/*allowFullScreen*/}
                     {/*/>*/}
+                    <LiteYouTubeEmbed
+                    id={item.node.Link_video}
+                    iframeClass={`iframeYoutube`}
+                    />
                   </div>
 
                   <div className={`row`}>
