@@ -218,21 +218,21 @@ const SectionComments = ({ showHeader = true }) => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
-                    <YouTube
-                      videoId={item.node.Link_video}                  // defaults -> null
-                      // id={string}                       // defaults -> null
-                      // className={string}                // defaults -> null
-                      // containerClassName={string}       // defaults -> ''
-                      opts={opts}                        // defaults -> {}
-                      // onReady={func}                    // defaults -> noop
-                      // onPlay={func}                     // defaults -> noop
-                      // onPause={func}                    // defaults -> noop
-                      // onEnd={func}                      // defaults -> noop
-                      // onError={func}                    // defaults -> noop
-                      // onStateChange={func}              // defaults -> noop
-                      // onPlaybackRateChange={func}       // defaults -> noop
-                      // onPlaybackQualityChange={func}    // defaults -> noop
-                    />
+                  {/*  <YouTube*/}
+                  {/*    // videoId={item.node.Link_video}                  // defaults -> null*/}
+                  {/*    // id={string}                       // defaults -> null*/}
+                  {/*    // className={string}                // defaults -> null*/}
+                  {/*    // containerClassName={string}       // defaults -> ''*/}
+                  {/*    // opts={opts}                        // defaults -> {}*/}
+                  {/*    // onReady={func}                    // defaults -> noop*/}
+                  {/*    // onPlay={func}                     // defaults -> noop*/}
+                  {/*    // onPause={func}                    // defaults -> noop*/}
+                  {/*    // onEnd={func}                      // defaults -> noop*/}
+                  {/*    // onError={func}                    // defaults -> noop*/}
+                  {/*    // onStateChange={func}              // defaults -> noop*/}
+                  {/*    // onPlaybackRateChange={func}       // defaults -> noop*/}
+                  {/*    // onPlaybackQualityChange={func}    // defaults -> noop*/}
+                    {/*/>*/}
                   </div>
 
                   <div className={`row`}>
