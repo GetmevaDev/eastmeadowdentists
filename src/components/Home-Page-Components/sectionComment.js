@@ -187,87 +187,87 @@ const SectionComments = ({ showHeader = true }) => {
         </Swiper>
 
         <div className={`box-comment_video row`}>
-          {/*<Swiper*/}
-          {/*  className={`box-comment--videos`}*/}
-          {/*  slidesPerView={1}*/}
-          {/*  spaceBetween={50}*/}
-          {/*  watchSlidesVisibility={true}*/}
-          {/*  watchSlidesProgress={true}*/}
-          {/*  // navigation={{*/}
-          {/*  //   nextEl: ".swiper-button-prev",*/}
-          {/*  //   prevEl: ".swiper-button-next",*/}
-          {/*  // }}*/}
-          {/*  breakpoints={{*/}
-          {/*    // when window width is >= 640px*/}
-          {/*    700: {*/}
-          {/*      slidesPerView: 2,*/}
-          {/*    },*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*{data.commentVideo.edges.map(item => {*/}
-          {/*  return (*/}
-          {/*    <SwiperSlide className={`block-comment_video`}>*/}
-          {/*      <div className={`container-slide`}>*/}
-          {/*        <div className="container-video-comment">*/}
-          {/*          <iframe*/}
-          {/*          loading={`lazy`}*/}
-          {/*          width="100%"*/}
-          {/*          height="100%"*/}
-          {/*          src={item.node.Link_video}*/}
-          {/*          frameBorder="0"*/}
-          {/*          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-          {/*          allowFullScreen*/}
-          {/*        ></iframe>*/}
-          {/*        /!*  <YouTube*!/*/}
-          {/*        /!*    // videoId={item.node.Link_video}                  // defaults -> null*!/*/}
-          {/*        /!*    // id={string}                       // defaults -> null*!/*/}
-          {/*        /!*    // className={string}                // defaults -> null*!/*/}
-          {/*        /!*    // containerClassName={string}       // defaults -> ''*!/*/}
-          {/*        /!*    // opts={opts}                        // defaults -> {}*!/*/}
-          {/*        /!*    // onReady={func}                    // defaults -> noop*!/*/}
-          {/*        /!*    // onPlay={func}                     // defaults -> noop*!/*/}
-          {/*        /!*    // onPause={func}                    // defaults -> noop*!/*/}
-          {/*        /!*    // onEnd={func}                      // defaults -> noop*!/*/}
-          {/*        /!*    // onError={func}                    // defaults -> noop*!/*/}
-          {/*        /!*    // onStateChange={func}              // defaults -> noop*!/*/}
-          {/*        /!*    // onPlaybackRateChange={func}       // defaults -> noop*!/*/}
-          {/*        /!*    // onPlaybackQualityChange={func}    // defaults -> noop*!/*/}
+          <Swiper
+            className={`box-comment--videos`}
+            slidesPerView={1}
+            spaceBetween={50}
+            watchSlidesVisibility={true}
+            watchSlidesProgress={true}
+            // navigation={{
+            //   nextEl: ".swiper-button-prev",
+            //   prevEl: ".swiper-button-next",
+            // }}
+            breakpoints={{
+              // when window width is >= 640px
+              700: {
+                slidesPerView: 2,
+              },
+            }}
+          >
+          {data.commentVideo.edges.map(item => {
+            return (
+              <SwiperSlide className={`block-comment_video`}>
+                <div className={`container-slide`}>
+                  <div className="container-video-comment">
+                    <iframe
+                    loading={`lazy`}
+                    width="100%"
+                    height="100%"
+                    src={item.node.Link_video}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  {/*  <YouTube*/}
+                  {/*    // videoId={item.node.Link_video}                  // defaults -> null*/}
+                  {/*    // id={string}                       // defaults -> null*/}
+                  {/*    // className={string}                // defaults -> null*/}
+                  {/*    // containerClassName={string}       // defaults -> ''*/}
+                  {/*    // opts={opts}                        // defaults -> {}*/}
+                  {/*    // onReady={func}                    // defaults -> noop*/}
+                  {/*    // onPlay={func}                     // defaults -> noop*/}
+                  {/*    // onPause={func}                    // defaults -> noop*/}
+                  {/*    // onEnd={func}                      // defaults -> noop*/}
+                  {/*    // onError={func}                    // defaults -> noop*/}
+                  {/*    // onStateChange={func}              // defaults -> noop*/}
+                  {/*    // onPlaybackRateChange={func}       // defaults -> noop*/}
+                  {/*    // onPlaybackQualityChange={func}    // defaults -> noop*/}
                     {/*/>*/}
-          {/*        </div>*/}
+                  </div>
 
-          {/*        <div className={`row`}>*/}
-          {/*          <div className="name_and_rating">*/}
-          {/*            <h4 className={`name`}>{item.node.Name}</h4>*/}
-          {/*            <div className={`stars_comment-video`}>*/}
-          {/*              {Array.from(Array(item.node.Rating), (item, i) => {*/}
-          {/*                return (*/}
-          {/*                  <span key={i}>*/}
-          {/*                    <img src={Star} alt="star" />*/}
-          {/*                  </span>*/}
-          {/*                )*/}
-          {/*              })}*/}
-          {/*            </div>*/}
-          {/*          </div>*/}
-          {/*          {item.node.the_comment_came_from || (*/}
-          {/*            <Image*/}
-          {/*              image={item.node.mobileImageGoogle.childImageSharp.fixed}*/}
-          {/*              desktopImage={item.node.desktopImageGoogle.childImageSharp.fixed}*/}
-          {/*              alt={`google`}*/}
-          {/*            />*/}
-          {/*            // <img*/}
-          {/*            //   src={item.node.the_comment_came_from.publicURL}*/}
-          {/*            //   alt=""*/}
-          {/*            // />*/}
-          {/*          )}*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
+                  <div className={`row`}>
+                    <div className="name_and_rating">
+                      <h4 className={`name`}>{item.node.Name}</h4>
+                      <div className={`stars_comment-video`}>
+                        {Array.from(Array(item.node.Rating), (item, i) => {
+                          return (
+                            <span key={i}>
+                              <img src={Star} alt="star" />
+                            </span>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    {item.node.the_comment_came_from || (
+                      <Image
+                        image={item.node.mobileImageGoogle.childImageSharp.fixed}
+                        desktopImage={item.node.desktopImageGoogle.childImageSharp.fixed}
+                        alt={`google`}
+                      />
+                      // <img
+                      //   src={item.node.the_comment_came_from.publicURL}
+                      //   alt=""
+                      // />
+                    )}
+                  </div>
+                </div>
 
 
 
-          {/*    </SwiperSlide>*/}
-          {/*  )*/}
-          {/*})}*/}
-          {/*</Swiper>*/}
+              </SwiperSlide>
+            )
+          })}
+          </Swiper>
         </div>
       </div>
     </section>
