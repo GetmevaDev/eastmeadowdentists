@@ -2,13 +2,13 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import Image from "../image"
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+
 import SwiperCore, { Navigation, Pagination, Scrollbar, Autoplay } from "swiper"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
+
 
 import "swiper/swiper.scss"
 import "swiper/components/navigation/navigation.scss"
@@ -19,6 +19,8 @@ import Star from "../../images/star.svg"
 import Arrow from "../../images/arrow.svg"
 import ArrowActive from "../../images/arrow-active.svg"
 import Avatar from "../../images/avatar.png"
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const SectionComments = ({ showHeader = true }) => {
   const data = useStaticQuery(graphql`
@@ -94,10 +96,7 @@ const SectionComments = ({ showHeader = true }) => {
   `)
   SwiperCore.use([Navigation, Pagination, Scrollbar, Autoplay])
 
-  const opts = {
-    height: '100%',
-    width: '100%',
-  }
+
   return (
     <section className={`section-comments ${showHeader ? "show-header" : ""}`}>
       {showHeader && (

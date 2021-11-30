@@ -46,7 +46,7 @@ const Footer = () => {
         alt={`footer-logo`}
         />
         {/*<img src={data.strapiHomePage.Footer_Logo[0].url} alt={data.strapiHomePage.Footer_Logo[0].alternativeText} />*/}
-        <p>©Copyright 2020. All rights reserved
+        <p>©Copyright 2021. All rights reserved
           Terms of Service</p>
       </div>
 
