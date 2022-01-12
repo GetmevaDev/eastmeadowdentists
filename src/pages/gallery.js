@@ -1,19 +1,20 @@
 import React from "react"
-import Layout from "../components/layout"
-import SectionHeader from "../components/RepeatComponents/sectionHeader"
+import { graphql, useStaticQuery } from "gatsby"
 
+import Layout from "../components/layout"
+
+import SectionHeader from "../components/RepeatComponents/sectionHeader"
 import SectionMap from "../components/RepeatComponents/sectionMap"
 import SectionAppointment from "../components/RepeatComponents/sectionAppointment"
 import SEO from "../components/seo"
-
 import TeethComponent from "../components/BeforeAfter/beforeAfter"
-import { graphql, useStaticQuery } from "gatsby"
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`
     {
       strapiGallerybBeforeAfter {
         SEO {
+          Description
           Title
         }
         SubTitle
@@ -24,7 +25,7 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <SEO seo={data.strapiGallerybBeforeAfter.SEO} />
+      <SEO seo={data.strapiGallerybBeforeAfter.SEO[0]} />
       <SectionHeader
         headerPrimary={data.strapiGallerybBeforeAfter.Title}
         headerSecondary={data.strapiGallerybBeforeAfter.SubTitle}
