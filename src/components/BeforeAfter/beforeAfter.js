@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const TeethComponent = () => {
   const teeth = useStaticQuery(graphql`
-    query MyQuery {
+    {
       allStrapiGallerybBeforeAfter {
         edges {
           node {
@@ -52,6 +52,7 @@ const TeethComponent = () => {
                   src={right.img[0].url}
                   alt=""
                 />
+
                 <span className="gallery__text">{right.text}</span>
               </div>
             ))}
