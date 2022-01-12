@@ -14,7 +14,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-pdf`,
+    // `gatsby-transformer-pdf`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
