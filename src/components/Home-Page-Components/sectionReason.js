@@ -1,7 +1,7 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import Image from "../image"
-
+import ReactMarkdown from "react-markdown"
 
 const SectionReason = () =>{
 
@@ -57,6 +57,7 @@ const SectionReason = () =>{
                 />
                 {/*<img src={item.node.Image[0].url} alt={item.node.Image[0].alternativeText} />*/}
                 <h5>{item.node.Title}</h5>
+
                 <p>{item.node.Text}</p>
               </div>
             )
