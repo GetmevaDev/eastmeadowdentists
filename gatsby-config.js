@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: "https://cms-all-smiles-dental-spa.herokuapp.com",
         // ? "https://cms-all-smiles-dental-spa.herokuapp.com"
         // : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
