@@ -19,9 +19,7 @@ export default function HTML(props) {
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-
-
-
+      <link rel="canonical" href="https://eastmeadowdentists.com/"/>
 
       {props.headComponents}
     </head>
