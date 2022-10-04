@@ -21,6 +21,7 @@ const SectionMap = () => {
           data.strapiContacts.Link_on_map && data.strapiContacts.Link_on_map !== null ?
             (
               <iframe
+                title="map"
                 loading={`lazy`}
                 src={data.strapiContacts.Link_on_map}
                 width="100%" height="450" frameBorder="0" style={{ border: 0 }} allowFullScreen="" aria-hidden="false"

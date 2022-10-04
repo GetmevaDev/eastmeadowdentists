@@ -76,6 +76,7 @@ class Header extends React.Component {
                   {/*<img src={data.strapiHomePage.Logo[0].url} alt={data.strapiHomePage.Logo[0].alternativeText} />*/}
                 </Link>
                 <button
+                  aria-label="button menu"
                   className={`button_menu`}
                   onClick={this.toggleImg.bind(this)}
                 >

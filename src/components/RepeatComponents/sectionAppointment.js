@@ -9,6 +9,7 @@ const SectionAppointment = ({ noMarginTop = false }) => {
     {
       strapiHomePage {
         Text_Section_Appointment
+        Section_Appointment_Image_AlternativeText
        mobileImage: Section_Appointment_Image {
               childImageSharp {
                   fixed(width: 400){
@@ -34,6 +35,7 @@ const SectionAppointment = ({ noMarginTop = false }) => {
           <Image
           image={data.strapiHomePage.mobileImage.childImageSharp.fixed}
           desktopImage={data.strapiHomePage.desktopImage.childImageSharp.fixed}
+          alt={data.strapiHomePage.Section_Appointment_Image_AlternativeText}
           />
           {/*<img*/}
           {/*  src={*/}
