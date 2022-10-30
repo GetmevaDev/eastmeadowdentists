@@ -10,14 +10,14 @@ const SectionAppointment = ({ noMarginTop = false }) => {
       strapiHomePage {
         Text_Section_Appointment
         Section_Appointment_Image_AlternativeText
-       mobileImage: Section_Appointment_Image {
+         mobileImage: Section_Appointment_Image {
               childImageSharp {
                   fixed(width: 400){
                     ...GatsbyImageSharpFixed_withWebp_noBase64
                   }
                 }
         }   
-       desktopImage: Section_Appointment_Image {
+         desktopImage: Section_Appointment_Image {
             childImageSharp {
                   fixed(width: 800){
                     ...GatsbyImageSharpFixed_withWebp_noBase64
