@@ -172,13 +172,9 @@ header .container .box {
 .gallery__main {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 80px;
   align-items: center;
-
-  .gallery__left,
-  .gallery__right {
-    display: flex;
-    flex-direction: column;
 
     .gallery__text {
       font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
@@ -189,7 +185,7 @@ header .container .box {
       color: #021744;
     }
   }
-}
+
 
 .gallery__right-inner,
 .gallery__left-inner {
