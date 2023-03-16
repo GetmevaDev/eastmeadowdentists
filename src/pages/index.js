@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SectionHeader from "../components/Home-Page-Components/sectionHeader"
-import SectionOffer from "../components/Home-Page-Components/sectionOffer"
+// import SectionOffer from "../components/Home-Page-Components/sectionOffer"
 import SectionWelcome from "../components/Home-Page-Components/sectionWelcome"
 import SectionComments from "../components/Home-Page-Components/sectionComment"
 import SectionReason from "../components/Home-Page-Components/sectionReason"
@@ -36,7 +36,7 @@ const IndexPage = () => {
         JSON.parse(seo.strapiHomePage.Schemaorg.Code_schema.replace(/\s+/g, ' ')) : null
       } />
       <SectionHeader />
-      <SectionOffer />
+      {/*<SectionOffer />*/}
       <SectionWelcome />
       <SectionComments />
       <SectionReason />
