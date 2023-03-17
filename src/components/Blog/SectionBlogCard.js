@@ -14,7 +14,7 @@ const SectionBlogCard = ({ post, isReadMore = true }) => {
         dangerouslySetInnerHTML={{ __html: crushText(post.Body) }}
         className="card-content-p"
       />
-        
+
       {console.log(typeof escapeHtml(post.Body))}
       {isReadMore ? (
         <div className="btn-blog">
