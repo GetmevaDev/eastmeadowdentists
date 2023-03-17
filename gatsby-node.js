@@ -100,7 +100,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
   posts.forEach(({ node }, idx) => {
     createPage({
-      path: `/${node.Published_Date}/${node.Slug}`,
+      path: `/blog/${node.Slug}`,
       component: path.resolve("./src/pages/post.js"),
       context: {
         post: node,

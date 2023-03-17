@@ -6,7 +6,7 @@ const SectionBlogCard = ({ post, isReadMore = true }) => {
   return (
     <div className="card-content">
       <h3>
-        <Link to={`/${post.Published_Date}/${post.Slug}`}>{post.Title}</Link>
+        <Link to={`/blog/${post.Slug}`}>{post.Title}</Link>
       </h3>
       <div
         key={`body`}
@@ -18,7 +18,7 @@ const SectionBlogCard = ({ post, isReadMore = true }) => {
       {isReadMore ? (
         <div className="btn-blog">
           <button>
-            <Link to={`/${post.Published_Date}/${post.Slug}`}>
+            <Link to={`/blog/${post.Slug}`}>
               Read more...
             </Link>
           </button>
