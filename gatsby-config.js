@@ -3,8 +3,10 @@ module.exports = {
     description: `Cosmetic & Implant Dentistry: Massapequa, NY.`,
     image: "/image/share.png",
     author: `@gatsbyjs`,
+    siteUrl: `https://eastmeadowdentists.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
