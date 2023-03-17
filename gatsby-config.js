@@ -6,6 +6,14 @@ module.exports = {
     siteUrl: `https://eastmeadowdentists.com`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.eastmeadowdentists.com",
+        sitemap: "https://www.eastmeadowdentists.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
