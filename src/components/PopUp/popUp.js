@@ -27,9 +27,6 @@ export function PopUp(){
     const [cleanPopUp, setCleanPopUp] = useLocalStorage("PopUpOff", true);
 
 
-    console.log(useLocalStorage)
-
-
 
     const removeCard = () => {
         setCleanPopUp(!cleanPopUp)
