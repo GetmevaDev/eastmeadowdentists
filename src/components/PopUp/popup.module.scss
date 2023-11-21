@@ -1,0 +1,106 @@
+@import "./src/scss/utils/mixins";
+
+
+.pop-up-text{
+  h2{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    @include mediaWidth_600{
+      font-size: 20px;
+    }
+  }
+  p{
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 13;
+  transition: .4s;
+}
+
+.cardWarning{
+  padding: 75px 40px 40px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  transition: .5s;
+  @include mediaWidth_424{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+}
+
+p{
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #0C1423;
+  strong{
+    color: #F07F21;
+    font-weight: 700;
+}
+  @include mediaWidth_424{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+}
+
+.buttonClose{
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  position: absolute;
+  top: 20px;
+  right: 21px;
+  cursor: pointer;
+  img{
+    max-width: 100%;
+}
+}
+
+.linkContainer{
+
+  a{
+    display: block;
+    padding: 14px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
+
+.callWarning{
+  color: #fff;
+  background: #43c0e4;
+}
+
+.linkWarning {
+  margin-bottom: 16px;
+  color: #43c0e4;
+  background: #fff;
+  border: solid #43c0e4;
+}
+
+
+
+

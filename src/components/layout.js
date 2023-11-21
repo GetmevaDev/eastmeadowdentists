@@ -14,6 +14,7 @@ import Footer from "./footer"
 import Call from "./call"
 import "./layout.css"
 import CallAdaptive from "./CallAdaptive/CallAdaptive"
+import {PopUp} from './PopUp/popUp';
 
 
 const Layout = ({ children }) => {
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-
+        <PopUp />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
