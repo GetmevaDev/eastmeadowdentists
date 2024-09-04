@@ -6,6 +6,7 @@ export default function HTML(props) {
     <html {...props.htmlAttributes}>
     <head>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116300824-2"></script>
+      <script defer src="https://book.getweave.com/text-connect/69dca75e-383c-4dd4-ac52-918c8a5a9cb3/widget.js"></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
