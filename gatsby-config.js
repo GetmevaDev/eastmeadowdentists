@@ -1,7 +1,4 @@
 module.exports = {
-   flags: {
-    DEV_SSR: true
-  },
   siteMetadata: {
     description: `Cosmetic & Implant Dentistry: Massapequa, NY.`,
     image: "/image/share.png",
