@@ -23,7 +23,7 @@
     "gatsby-transformer-inline-svg": "0.0.7",
     "gatsby-transformer-sharp": "^2.6.0",
     "moment": "^2.29.1",
-    "node-sass": "^9.0.0",
+    "node-sass": "^4.14.1",
     "preact": "^10.11.1",
     "preact-render-to-string": "^5.2.4",
     "prop-types": "^15.7.2",
