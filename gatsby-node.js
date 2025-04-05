@@ -1,7 +1,5 @@
 const path = require(`path`)
 
-require('events').EventEmitter.defaultMaxListeners = 25;
-
 exports.createPages = async function ({ actions, graphql }) {
   const { createPage } = actions
 
