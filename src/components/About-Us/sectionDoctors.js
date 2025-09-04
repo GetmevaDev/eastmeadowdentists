@@ -2,6 +2,16 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
+function htmlToPlain(html) {
+  if (!html) return "";
+  if (!(html instanceof String || typeof value === 'string')) return ""
+  return html
+    .replace(/<\/p>\s*<p>/gi, '\n\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/?[^>]+>/g, '') 
+    .trim();
+}
+
 const SectionDoctors = () => {
   const data = useStaticQuery(graphql`
     {
@@ -34,7 +44,7 @@ const SectionDoctors = () => {
             <div className={`text-box`}>
               <h2 className={`dds_pretitle`}>{item.node.Specialization}</h2>
               <h3 className={`dds_title`}>{item.node.Name}</h3>
-              <p className={`dds_text`}>{item.node.About_Doctor}</p>
+              <p className={`dds_text`} style="white-space: pre-line;">{htmlToPlain(item.node.About_Doctor)}</p>
             </div>
             <div className={`photo-box`}>
               <Img fixed={item.node.Photo.childImageSharp.fixed} />
